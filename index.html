@@ -11,13 +11,13 @@
     <script type="module" src="src/js/main.js"></script>
   </head>
   <body class="">
-    <header class="px-[8%] bg-primary overflow-visible relative">
+    <header class="px-[8%] bg-primary">
       <div id="header-wrapper" class="flex py-4 sm:py-6 relative items-center sm:justify-center">
         <img src="/bendito-logo.jpg" alt="" class="h-16 sm:h-18 lg:h-20">
         <button id="header-cta" class="text-text-primary bg-cta rounded-md absolute right-0 px-4 py-2 hover:scale-110 transition-all duration-150 ease-in-out font-[Nunito] font-bold text-sm sm:text-base lg:text-lg active:bg-cta-dark active:scale-90">CONTATAR</button>
       </div>
     </header>
-    <section id="hero-sec" class="flex justify-center items-center gap-4 relative py-6 px-[8%]">
+    <section id="hero-sec" class="flex justify-center items-center gap-4 relative py-6 px-[8%] w-full max-h-200">
       <div id="blur" class="bg-[rgba(0,0,0,75%)] absolute inset-0"></div>
       <div id="hero-text-wrapper" class="flex flex-col justify-center items-center z-10 text-center w-full">
         <h1 id="main-hero-text" class="font-[Bebas_Neue] text-5xl sm:text-8xl text-text-primary">BENDITO NORTH</h1>
@@ -28,7 +28,12 @@
         <p id="know-more-text" class="transition-transform duration-220 tracking-wider font-bold">SAIBA MAIS</p>
       </button>
     </section>
-    <section id="present"></section>
+    <section id="present" class="bg-primary w-full py-4 sm:py-6 flex flex-col items-center justify-center gap-6">
+      <div id="present-text-wrapper">
+        <h1 class="font-[Bebas_Neue] text-text-primary text-5xl">O QUE É A BENDITO NORTH?</h1>
+      </div>
+      <iframe autoplay class="rounded-lg" width="560" height="315" src="https://www.youtube.com/embed/YKen3bvIZzM?si=e5LOG0g1TyTl2bdS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
     <section id="proposal-benefits"></section>
     <section id="testimonial"></section>
     <section></section>

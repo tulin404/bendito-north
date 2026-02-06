@@ -14,6 +14,6 @@
 }
 
 #hero-sec {
-    background: url("../../bendito_work.jpg") no-repeat center / cover;
+    background: url("../../bendito_work.jpg") no-repeat top / cover;
     @apply sm:aspect-video aspect-square
 }
