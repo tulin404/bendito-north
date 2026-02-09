@@ -10,33 +10,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <script type="module" src="src/js/main.js"></script>
   </head>
-  <body class="">
+  <body>
     <header class="px-[8%] bg-primary">
       <div id="header-wrapper" class="flex py-4 sm:py-6 relative items-center sm:justify-center">
         <img src="/bendito-logo.jpg" alt="" class="h-18 sm:h-20 lg:h-22">
         <button id="header-cta" class="text-text-primary bg-cta rounded-md absolute right-0 px-4 py-2 hover:scale-110 transition-all duration-150 ease-in-out font-[Nunito] font-bold text-sm sm:text-base md:text-lg active:bg-cta-dark active:scale-90">CONTATAR</button>
       </div>
     </header>
-    <section id="hero-sec" class="flex justify-center items-center relative py-6 px-[8%] w-full max-h-200">
+    <section id="hero-sec" class="flex justify-center items-center relative py-12 px-[8%] w-full sm:h-[80dvh] h-[70dvh]">
       <div id="blur" class="bg-[rgba(0,0,0,75%)] absolute inset-0"></div>
-      <div id="hero-text-wrapper" class="flex flex-col md:gap-4 justify-center items-center z-10 text-center w-full">
-        <h1 id="main-hero-text" class="font-[Bebas_Neue] text-6xl sm:text-8xl text-text-primary text-nowrap">BENDITO NORTH</h1>
-        <h2 id="sec-hero-text" class="font-[Nunito] text-lg sm:text-2xl text-text-primary">Criatividade com direção, conexão e resultado.</h2>
+      <div id="hero-text-wrapper" class="flex flex-col md:gap-4 justify-center items-center z-10 text-center">
+        <h1 id="main-hero-text" class="relative font-[Bebas_Neue] text-7xl sm:text-9xl text-text-primary text-nowrap"></h1>
+        <h2 id="sec-hero-text" class="font-[Nunito] text-lg sm:text-2xl text-text-secondary">Criatividade com direção, conexão e resultado.</h2>
       </div>
-      <button id="know-more" class="absolute text-text-primary bg-cta bottom-4 md:bottom-14 px-6 py-3 sm:px-10 sm:py-5 rounded-lg flex overflow-hidden text-xl sm:text-3xl transition-all duration-150 font-[Nunito] hover:scale-110 ease-in-out active:bg-cta-dark active:scale-90">
+      <button id="know-more" class="absolute text-text-primary bg-cta bottom-14 px-6 py-4 sm:px-10 sm:py-5 rounded-lg flex overflow-hidden text-2xl sm:text-4xl transition-all duration-150 font-[Nunito] hover:scale-110 ease-in-out active:bg-cta-dark active:scale-90">
         <a href="#present">
           <p id="arrow-down" class="-translate-y-48 -translate-x-1/2 top-1/2 left-1/2 absolute transition-transform duration-220">↓</p>
           <p id="know-more-text" class="transition-transform duration-220 tracking-wider font-bold">SAIBA MAIS</p>
         </a>
       </button>
     </section>
-    <section id="present" class="bg-primary w-full py-12 flex flex-col items-center justify-center gap-6">
+    <section id="present" class="bg-primary w-full py-12 flex flex-col items-center justify-evenly gap-12 min-h-[70dvh] scroll-mt-[20vh]">
       <div id="present-text-wrapper">
-        <h1 class="font-[Bebas_Neue] text-text-primary text-center text-4xl sm:text-6xl">O QUE É A BENDITO NORTH?</h1>
+        <h1 class="font-[Bebas_Neue] text-text-primary text-center text-5xl sm:text-6xl">O QUE É A BENDITO NORTH?</h1>
+        <h2 class="text-text-primary text-lg text-center">Descubra mais sobre nossa empresa!</h2>
       </div>
-      <iframe autoplay class="rounded-lg" width="560" height="315" src="https://www.youtube.com/embed/YKen3bvIZzM?si=e5LOG0g1TyTl2bdS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe autoplay class="rounded-lg md:h-112 md:w-172 h-52 w-xs" src="https://www.youtube.com/embed/YKen3bvIZzM?si=e5LOG0g1TyTl2bdS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </section>
-    <section id="proposal-benefits"></section>
+    <section id="proposal-benefits" class="bg-secondary py-12 flex flex-col items-center justify-center gap-8 lg:min-h-[50dvh]">
+    <div id="proposal-text-wrapper" class="flex justify-center items-center">
+      <h1 class="text-text-primary font-[Bebas_Neue] text-5xl sm:text-6xl">CONOSCO, VOCÊ TEM</h1>
+    </div>
+    <div id="benefits-wrapper" class="md:grid md:grid-cols-3 gap-6 justify-center w-[65%] flex flex-col">
+      <div class="border-2 border-cta text-center rounded-md py-6 px-2 flex flex-col items-center gap-2">
+        <img src="/write.svg" alt="" class="sm:h-20">
+        <p class="text-text-primary sm:text-lg text-balance">Um plano <cta>orgânico</cta> e <cta>personalizado</cta> para garantir o crescimento da sua empresa.</p>
+      </div>
+      <div class="border-2 border-cta text-center rounded-md py-6 px-2 flex flex-col items-center gap-2">
+        <img src="/heart.svg" alt="" class="sm:h-20">
+        <p class="text-text-primary sm:text-lg text-balance">Atendimento <cta>atencioso</cta> e <cta>único</cta> para cuidar de todas as suas necessidades.</p>
+      </div>
+      <div class="border-2 border-cta text-center rounded-md py-6 px-2 flex flex-col items-center gap-2">
+        <img src="/money.svg" alt="" class="sm:h-20">
+        <p class="text-text-primary sm:text-lg text-balance">Preço <cta>amigável</cta> e <cta>pensado</cta> para caber no seu bolso.</p>
+      </div>
+    </div>
+    </section>
     <section id="testimonial"></section>
     <section></section>
   </body>
