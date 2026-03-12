@@ -15,22 +15,30 @@
 </head>
 <body class="relative">
   <div id="grad-wrapper">
-    <header class="px-[8%] origin-top transition-all duration-200 z-10 py-1 fixed h-[11dvh] sm:h-[13dvh] w-full gap-4 flex sm:justify-between justify-center items-center">
-      <button id="ham-menu-btn" class="absolute left-[5%] h-[25%] w-[20%] flex items-center sm:hidden">
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-300 hidden"></div>
+    <header class="px-[8%] origin-top transition-all duration-200 z-300 py-1 fixed h-[11dvh] sm:h-[13dvh] w-full gap-4 flex sm:justify-between justify-center items-center">
+      <button id="ham-menu-btn" class="absolute left-[4%] h-[25%] w-[20%] flex items-center sm:hidden z-500">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <menu id="ham-menu" class="-translate-x-[100dvw] sm:hidden absolute left-0 w-[30dvw] z-10 bg-text-primary h-dvh">
-
-      </menu>
-      <img id="header-logo" class="sm:h-[80%] h-[80%]" src="/bendito-logo.png" alt="">  
-      <nav class="text-text-secondary hidden sm:flex font-[Red_Hat_Text] tracking-tight font-semibold gap-4 lg:gap-8 lg:text-lg">
-        <a href="#present">Quem somos</a>
-        <a href="">Serviços</a>
-        <a href="">Portfolio</a>
-        <a href="">Clientes</a>
-        <a href="">Depoimentos</a>
+      <nav id="ham-menu" class="flex flex-col gap-4 text-text-secondary font-bold text-lg font-[Red_Hat_Text] text-left -translate-x-[100dvw] h-dvh sm:hidden fixed top-0 bottom-0 left-0 w-[45dvw] z-400 bg-sticker-light transition-transform duration-200">
+        <a href="#" class="ham-link pl-[10%] pt-24">Início</a>
+        <a href="#present" class="ham-link pl-[10%]">Quem somos</a>
+        <a href="" class="ham-link pl-[10%]">Serviços</a>
+        <a href="" class="ham-link pl-[10%]">Fale conosco</a>
+        <a href="" class="ham-link pl-[10%]">Portfolio</a>
+        <a href="" class="ham-link pl-[10%]">Clientes</a>
+        <a href="" class="ham-link pl-[10%]">Depoimentos</a>
+      </nav>
+      <a href="#" class="sm:h-[80%] h-[80%]"><img id="header-logo" class="h-full" src="/bendito-logo.png" alt=""></a>
+      <nav id="navbar" class="text-text-secondary text-nowrap hidden sm:flex font-[Red_Hat_Text] tracking-tight font-semibold text-sm md:text-base gap-4 lg:gap-8 lg:text-lg">
+        <a class="relative ham-link transition-all duration-200 hover:scale-105" href="#present">Quem somos</a>
+        <a class="relative ham-link transition-all duration-200 hover:scale-105" href="">Serviços</a>
+        <a class="relative ham-link transition-all duration-200 hover:scale-105" href="">Portfolio</a>
+        <a class="relative ham-link transition-all duration-200 hover:scale-105" href="">Clientes</a>
+        <a class="relative ham-link transition-all duration-200 hover:scale-105" href="">Depoimentos</a>
+        <a class="relative ham-link transition-all duration-200 hover:scale-105" href="">Contate-nos</a>
       </nav>
     </header>
     <main id="hero" class="h-dvh sm:pt-[13dvh] pt-[11dvh] flex flex-col items-center justify-center gap-8">
@@ -40,12 +48,12 @@
       </div>
       <button id="cta-hero" class="bg-cta text-text-primary md:text-3xl text-2xl font-black font-[Red_Hat_Text] px-6 py-2.25 sm:px-[4%] sm:py-[2.25%] md:px-[3.25%] md:py-[1.75%] transition-all duration-200 rounded-full hover:scale-105 hover:bg-cta-dark active:scale-95 active:bg-cta-darker">Fale conosco</button>
     </main>
-    <section id="present" class="sm:min-h-dvh flex items-center justify-center">
+    <section id="present" class="sm:min-h-dvh flex items-center justify-center pb-8 sm:pb-0">
       <div id="sticker" class="relative w-full h-full border-2 border-sticker-light rounded-xl bg-sticker md:h-[85dvh]">
         <img class="h-full float-left rounded-l-xl hidden lg:block" src="/bendita-equipe.jpeg" alt="">
         <div id="content-wrapper" class="h-full flex flex-col justify-between">
           <div id="text-wrapper" class="flex flex-col flex-1 py-3 px-6 sm:py-5 sm:px-10 gap-3 items-center justify-center text-center text-balance">
-            <h2 class="font-[coolvetica] text-text-primary text-5xl sm:text-6xl">Quem somos nós?</h2>
+            <h2 class="font-[coolvetica] text-text-primary text-5xl sm:text-6xl">Quem somos</h2>
             <p class="font-[Red_Hat_Text] text-lg xl:text-xl text-text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla in, quo eligendi unde quod recusandae, et doloribus molestiae provident minus aut magni animi alias quae necessitatibus impedit natus possimus illo dolor repudiandae animi non velit officiis ut! Obcaecati, nobis atque maiores nihil quo voluptates accusantium?</p>
           </div>
           <div id="icons-wrapper" class="flex-2 relative overflow-hidden flex items-center text-center py-4 w-auto h-auto max-h-90">

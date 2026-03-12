@@ -1,18 +1,41 @@
 const hamMenuBtn = document.getElementById('ham-menu-btn');
 const hamMenu = document.getElementById('ham-menu');
+const overlay = document.getElementById('overlay');
+const benditoImg = document.getElementById('header-logo');
+const header = document.querySelector('header');
 
 hamMenuBtn.addEventListener('click', () => {
     hamMenuBtn.classList.toggle('active');
-    hamMenu.classList.toggle('active');
     hamMenu.classList.toggle('-translate-x-[100dvw]');
-    document.documentElement.classList.toggle('op-blur');
+    overlay.classList.toggle('hidden');
+    benditoImg.classList.toggle('opacity-50');
+    document.documentElement.classList.toggle('overflow-hidden');
+    if (header.classList.contains('scale-y-85')) {
+        header.classList.remove('scale-y-85');
+    };
 });
 
-if (innerWidth > 640) {
-    hamMenu.inert = true;
-}
 
-const header = document.querySelector('header');
+if (window.innerWidth <= 640) {
+    window.addEventListener('click', (e) => {
+        if (e.target.classList.contains('ham-link')) {
+            hamMenuBtn.classList.toggle('active');
+            hamMenu.classList.toggle('-translate-x-[100dvw]');
+            overlay.classList.toggle('hidden');
+            benditoImg.classList.toggle('opacity-50');
+            document.documentElement.classList.toggle('overflow-hidden');
+            if (header.classList.contains('scale-y-85')) {
+                header.classList.remove('scale-y-85');
+            };
+        };
+    });
+};
+
+    if (innerWidth > 640) {
+        hamMenu.inert = true;
+    };
+
+
 
 window.addEventListener('scroll', () => {
     if (scrollY > 0) {
@@ -51,3 +74,20 @@ setInterval(() => {
     moveToSlide();
 }, 5000);
 
+const navLinks = Array.from(document.querySelectorAll('#navbar > a'));
+const sections = document.querySelectorAll('section');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        const index = Array.from(sections).indexOf(entry.target);
+
+        if (entry.isIntersecting) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            navLinks[index].classList.add('active');
+        } else {
+            navLinks[index].classList.remove('active');
+        }
+    })
+}, { threshold: 0.4 });
+
+sections.forEach(section => observer.observe(section));

@@ -12,6 +12,16 @@
     --color-cta-darker: oklch(0.5096 0.2738 147.7);
 };
 
+html {
+    scroll-padding-top: 48px;
+}
+
+#ham-menu {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+}
+
 #ham-menu-btn {
   height: 22px;
   width: 28px;
@@ -131,6 +141,21 @@ button {
     )
 };
 
-html.op-blur *:not(#ham-menu) {
-    opacity: 0.3;
-};
+#overlay {
+    pointer-events: none;
+}
+
+#navbar > a::after {
+    background-color: var(--color-text-secondary);
+    width: 100%;
+    height: 2px;
+    content: "";
+    position: absolute;
+    bottom: 0; 
+    right: 0;
+    @apply scale-x-0 transition-all duration-300
+}
+
+#navbar > a:hover::after, #navbar > a.active::after {
+    @apply scale-x-100
+}
