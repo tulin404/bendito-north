@@ -1,36 +1,136 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: oklch(0.1636 0.0067 178.64);
+    --color-primary: #0B0F0E;
+    --color-sticker: oklch(0.15 0 0);
+    --color-sticker-light: oklch(0.2 0 0);
     --color-secondary: oklch(0.2432 0.0067 178.64);
     --color-text-primary: oklch(1 0 0);
     --color-text-secondary: oklch(0.9 0 0);
-    --color-cta: oklch(0.7 0.16 85);
-    --color-cta-dark: oklch(0.6 0.16 85);
+    --color-cta: oklch(0.7096 0.2738 147.7);
+    --color-cta-dark: oklch(0.6096 0.2738 147.7);
+    --color-cta-darker: oklch(0.5096 0.2738 147.7);
 };
 
-#header-cta:hover, #know-more:hover {
-    box-shadow: #FBBF24 0px 0px 32px;
-};
-
-#hero-sec {
-    background: url("../../bendito_work.jpg") no-repeat top / cover;
-    @apply sm:aspect-video aspect-square
-};
-
-#main-hero-text::after {
-    content: '';
-    position: absolute;
-    bottom: 8px;
-    top: 0;
-    width: 4px;
-    background-color: white;
-};
-
-#main-hero-text.pseudo::after {
-    display: none;
-};
-
-cta {
-    @apply text-cta italic;
+#ham-menu-btn {
+  height: 22px;
+  width: 28px;
+  cursor: pointer;
 }
+
+#ham-menu-btn span {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 999px;
+    left: 0;
+    @apply transition-all duration-300
+}
+
+#ham-menu-btn span:nth-child(1) {
+    top: 0;
+}
+
+#ham-menu-btn span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#ham-menu-btn span:nth-child(3) {
+    bottom: 0;
+}
+
+#ham-menu-btn.active span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+#ham-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+#ham-menu-btn.active span:nth-child(3) {
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+header {
+    @apply backdrop-blur-lg
+}
+
+#grad-wrapper {
+    background: #0B0F0E;
+    background: linear-gradient(130deg, rgba(11, 15, 14, 1) 25%, rgba(0, 1, 0, 1) 45%, rgba(107, 255, 137, 1) 75%, rgba(0, 1, 0, 1) 90%);
+}
+
+body > *:not(header, #grad-wrapper) {
+    @apply px-[8%]
+}
+
+#grad-wrapper > *{
+
+    @apply px-[8%]
+}
+
+button {
+    @apply hover:cursor-pointer
+}
+
+#sticker {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 24px 8px;
+}
+
+.vision {
+    @apply cursor-default
+}
+
+@media (width > 768px) {
+    .vision:hover {
+        box-shadow: var(--color-cta-darker) 0px 0px 24px 4px;
+    }
+    
+}
+
+#cta-hero:hover {
+    box-shadow: var(--color-cta-darker) 0 0 16px 6px;
+}
+
+#icons-wrapper::before {
+    position: absolute;
+    border-bottom-left-radius: 12px;
+    content: "";
+    left: 0;
+    z-index: 100;
+    height: 100%;
+    width: 7dvw;
+    background: linear-gradient(
+        to right,
+        rgba(11, 11, 11, 1),
+        rgba(11, 11, 11, 0.7),
+        rgba(11, 11, 11, 0.4),
+        rgba(11, 11, 11, 0.05)
+    )
+};
+
+#icons-wrapper::after {
+    position: absolute;
+    border-bottom-right-radius: 12px;
+    content: "";
+    right: 0;
+    z-index: 100;
+    height: 100%;
+    width: 7dvw;
+    background: linear-gradient(
+        to left,
+        rgba(11, 11, 11, 1),
+        rgba(11, 11, 11, 0.7),
+        rgba(11, 11, 11, 0.4),
+        rgba(11, 11, 11, 0.05)
+    )
+};
+
+html.op-blur *:not(#ham-menu) {
+    opacity: 0.3;
+};

@@ -1,62 +1,87 @@
-<!doctype html>
-<html lang="pt-br" class="min-h-dvh bg-primary scroll-smooth">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bendito North</title>
-    <link rel="stylesheet" href="src/css/input.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <script type="module" src="src/js/main.js"></script>
-  </head>
-  <body>
-    <header class="px-[8%] bg-primary">
-      <div id="header-wrapper" class="flex py-4 sm:py-6 relative items-center sm:justify-center">
-        <img src="/bendito-logo.jpg" alt="" class="h-18 sm:h-20 lg:h-22">
-        <button id="header-cta" class="text-text-primary bg-cta rounded-md absolute right-0 px-4 py-2 hover:scale-110 transition-all duration-150 ease-in-out font-[Nunito] font-bold text-sm sm:text-base md:text-lg active:bg-cta-dark active:scale-90">CONTATAR</button>
-      </div>
-    </header>
-    <section id="hero-sec" class="flex justify-center items-center relative py-12 px-[8%] w-full sm:h-[80dvh] h-[70dvh]">
-      <div id="blur" class="bg-[rgba(0,0,0,75%)] absolute inset-0"></div>
-      <div id="hero-text-wrapper" class="flex flex-col md:gap-4 justify-center items-center z-10 text-center">
-        <h1 id="main-hero-text" class="relative font-[Bebas_Neue] text-7xl sm:text-9xl text-text-primary text-nowrap"></h1>
-        <h2 id="sec-hero-text" class="font-[Nunito] text-lg sm:text-2xl text-text-secondary">Criatividade com direção, conexão e resultado.</h2>
-      </div>
-      <button id="know-more" class="absolute text-text-primary bg-cta bottom-14 px-6 py-4 sm:px-10 sm:py-5 rounded-lg flex overflow-hidden text-2xl sm:text-4xl transition-all duration-150 font-[Nunito] hover:scale-110 ease-in-out active:bg-cta-dark active:scale-90">
-        <a href="#present">
-          <p id="arrow-down" class="-translate-y-48 -translate-x-1/2 top-1/2 left-1/2 absolute transition-transform duration-220">↓</p>
-          <p id="know-more-text" class="transition-transform duration-220 tracking-wider font-bold">SAIBA MAIS</p>
-        </a>
+<!DOCTYPE html>
+<html lang="en" class="bg-primary scroll-smooth filter transition-all opacity-100 duration-200">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bendito North</title>
+  <link rel="shortcut icon" href="/bendito-logo.png" type="image/jpg">
+  <link rel="stylesheet" href="src/css/input.css">
+  <link href="https://fonts.cdnfonts.com/css/coolvetica" rel="stylesheet">
+  <link rel="stylesheet" href="src/css/hamburguer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+  <script defer src="src/js/main.js"></script>
+</head>
+<body class="relative">
+  <div id="grad-wrapper">
+    <header class="px-[8%] origin-top transition-all duration-200 z-10 py-1 fixed h-[11dvh] sm:h-[13dvh] w-full gap-4 flex sm:justify-between justify-center items-center">
+      <button id="ham-menu-btn" class="absolute left-[5%] h-[25%] w-[20%] flex items-center sm:hidden">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
+      <menu id="ham-menu" class="-translate-x-[100dvw] sm:hidden absolute left-0 w-[30dvw] z-10 bg-text-primary h-dvh">
+
+      </menu>
+      <img id="header-logo" class="sm:h-[80%] h-[80%]" src="/bendito-logo.png" alt="">  
+      <nav class="text-text-secondary hidden sm:flex font-[Red_Hat_Text] tracking-tight font-semibold gap-4 lg:gap-8 lg:text-lg">
+        <a href="#present">Quem somos</a>
+        <a href="">Serviços</a>
+        <a href="">Portfolio</a>
+        <a href="">Clientes</a>
+        <a href="">Depoimentos</a>
+      </nav>
+    </header>
+    <main id="hero" class="h-dvh sm:pt-[13dvh] pt-[11dvh] flex flex-col items-center justify-center gap-8">
+      <div id="text-wrapper" class="flex flex-col items-center text-text-primary font-[coolvetica] tracking-tight">
+        <p>BENDITO NORTH</p>
+        <h1 class="md:w-[40dvw] tracking-wider sm:w-auto text-6xl sm:text-7xl text-center text-pretty">Criatividade com <i>direção</i>, <i>conexão</i> e <g class="text-cta-dark">resultado.</g></h1>
+      </div>
+      <button id="cta-hero" class="bg-cta text-text-primary md:text-3xl text-2xl font-black font-[Red_Hat_Text] px-6 py-2.25 sm:px-[4%] sm:py-[2.25%] md:px-[3.25%] md:py-[1.75%] transition-all duration-200 rounded-full hover:scale-105 hover:bg-cta-dark active:scale-95 active:bg-cta-darker">Fale conosco</button>
+    </main>
+    <section id="present" class="sm:min-h-dvh flex items-center justify-center">
+      <div id="sticker" class="relative w-full h-full border-2 border-sticker-light rounded-xl bg-sticker md:h-[85dvh]">
+        <img class="h-full float-left rounded-l-xl hidden lg:block" src="/bendita-equipe.jpeg" alt="">
+        <div id="content-wrapper" class="h-full flex flex-col justify-between">
+          <div id="text-wrapper" class="flex flex-col flex-1 py-3 px-6 sm:py-5 sm:px-10 gap-3 items-center justify-center text-center text-balance">
+            <h2 class="font-[coolvetica] text-text-primary text-5xl sm:text-6xl">Quem somos nós?</h2>
+            <p class="font-[Red_Hat_Text] text-lg xl:text-xl text-text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla in, quo eligendi unde quod recusandae, et doloribus molestiae provident minus aut magni animi alias quae necessitatibus impedit natus possimus illo dolor repudiandae animi non velit officiis ut! Obcaecati, nobis atque maiores nihil quo voluptates accusantium?</p>
+          </div>
+          <div id="icons-wrapper" class="flex-2 relative overflow-hidden flex items-center text-center py-4 w-auto h-auto max-h-90">
+            <div id="track" class="flex items-center px-8 gap-8 sm:gap-12 sm:px-12 xl:gap-20 xl:px-20 h-full transition-all duration-600">
+              <div class="vision w-64 sm:w-sm flex flex-col justify-center items-center border-2 border-cta md:border-sticker-light hover:border-cta rounded-xl bg-sticker gap-4 transition-all duration-200 px-6 py-3">
+                <img src="/arrow-in-the-target.svg" class="h-20" alt="">
+                <div class="text-wrapper">
+                  <h3 class="text-text-primary font-[coolvetica] text-xl sm:text-2xl">VISÃO ESTRATÉGICA</h3>
+                  <p class="text-text-secondary font-[Red_Hat_Text]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum delectus tempore magni doloremque beatae quis modi quasi voluptatem sed ea nihil maxime odio i.</p>
+                </div>
+              </div>
+              <div class="vision w-64 sm:w-sm flex flex-col justify-center items-center border-2 border-cta md:border-sticker-light hover:border-cta rounded-xl bg-sticker gap-4 transition-all duration-200 px-4 sm:px-6 py-3">
+                <img src="/arrow-in-the-target.svg" class="h-20" alt="">
+                <div class="text-wrapper">
+                  <h3 class="text-text-primary font-[coolvetica] text-xl sm:text-2xl">VISÃO ESTRATÉGICA</h3>
+                  <p class="text-text-secondary font-[Red_Hat_Text]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum delectus tempore magni doloremque beatae quis modi quasi voluptatem sed ea nihil maxime odio i.</p>
+                </div>
+              </div>
+              <div class="vision w-64 sm:w-sm flex flex-col justify-center items-center border-2 border-cta md:border-sticker-light md:hover:border-cta rounded-xl bg-sticker gap-4 transition-all duration-200 px-6 py-3">
+                <img src="/arrow-in-the-target.svg" class="h-20" alt="">
+                <div class="text-wrapper">
+                  <h3 class="text-text-primary font-[coolvetica] text-xl sm:text-2xl">VISÃO ESTRATÉGICA</h3>
+                  <p class="text-text-secondary font-[Red_Hat_Text]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum delectus tempore magni doloremque beatae quis modi quasi voluptatem sed ea nihil maxime odio i.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <section id="present" class="bg-primary w-full py-12 flex flex-col items-center justify-evenly gap-12 min-h-[70dvh] scroll-mt-[20vh]">
-      <div id="present-text-wrapper">
-        <h1 class="font-[Bebas_Neue] text-text-primary text-center text-5xl sm:text-6xl">O QUE É A BENDITO NORTH?</h1>
-        <h2 class="text-text-primary text-lg text-center">Descubra mais sobre nossa empresa!</h2>
-      </div>
-      <iframe autoplay class="rounded-lg md:h-112 md:w-172 h-52 w-xs" src="https://www.youtube.com/embed/YKen3bvIZzM?si=e5LOG0g1TyTl2bdS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+    <section id="" class="h-dvh bg-black">
+
     </section>
-    <section id="proposal-benefits" class="bg-secondary py-12 flex flex-col items-center justify-center gap-8 lg:min-h-[50dvh]">
-    <div id="proposal-text-wrapper" class="flex justify-center items-center">
-      <h1 class="text-text-primary font-[Bebas_Neue] text-5xl sm:text-6xl">CONOSCO, VOCÊ TEM</h1>
-    </div>
-    <div id="benefits-wrapper" class="md:grid md:grid-cols-3 gap-6 justify-center w-[65%] flex flex-col">
-      <div class="border-2 border-cta text-center rounded-md py-6 px-2 flex flex-col items-center gap-2">
-        <img src="/write.svg" alt="" class="sm:h-20">
-        <p class="text-text-primary sm:text-lg text-balance">Um plano <cta>orgânico</cta> e <cta>personalizado</cta> para garantir o crescimento da sua empresa.</p>
-      </div>
-      <div class="border-2 border-cta text-center rounded-md py-6 px-2 flex flex-col items-center gap-2">
-        <img src="/heart.svg" alt="" class="sm:h-20">
-        <p class="text-text-primary sm:text-lg text-balance">Atendimento <cta>atencioso</cta> e <cta>único</cta> para cuidar de todas as suas necessidades.</p>
-      </div>
-      <div class="border-2 border-cta text-center rounded-md py-6 px-2 flex flex-col items-center gap-2">
-        <img src="/money.svg" alt="" class="sm:h-20">
-        <p class="text-text-primary sm:text-lg text-balance">Preço <cta>amigável</cta> e <cta>pensado</cta> para caber no seu bolso.</p>
-      </div>
-    </div>
-    </section>
-    <section id="testimonial"></section>
-    <section></section>
-  </body>
+    <section id="test" class="h-dvh"></section>
+    <section id="test" class="h-dvh"></section>
+    <section id="test" class="h-dvh"></section>
+</body>
 </html>
