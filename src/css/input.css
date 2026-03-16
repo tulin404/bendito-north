@@ -4,6 +4,7 @@
     --color-primary: #0B0F0E;
     --color-sticker: oklch(0.15 0 0);
     --color-sticker-light: oklch(0.2 0 0);
+    --color-sticker-lighter: oklch(0.35 0 0);
     --color-secondary: oklch(0.2432 0.0067 178.64);
     --color-text-primary: oklch(1 0 0);
     --color-text-secondary: oklch(0.9 0 0);
@@ -16,71 +17,11 @@ html {
     scroll-padding-top: 48px;
 }
 
-#ham-menu {
-    padding: 0 !important;
-    margin: 0 !important;
-    border: 0 !important;
-}
-
-#ham-menu-btn {
-  height: 22px;
-  width: 28px;
-  cursor: pointer;
-}
-
-#ham-menu-btn span {
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background: white;
-    border-radius: 999px;
-    left: 0;
-    @apply transition-all duration-300
-}
-
-#ham-menu-btn span:nth-child(1) {
-    top: 0;
-}
-
-#ham-menu-btn span:nth-child(2) {
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#ham-menu-btn span:nth-child(3) {
-    bottom: 0;
-}
-
-#ham-menu-btn.active span:nth-child(1) {
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-}
-
-#ham-menu-btn.active span:nth-child(2) {
-    opacity: 0;
-}
-
-#ham-menu-btn.active span:nth-child(3) {
-    bottom: auto;
-    top: 50%;
-    transform: translateY(-50%) rotate(-45deg);
-}
-
 header {
     @apply backdrop-blur-lg
 }
 
-#grad-wrapper {
-    background: #0B0F0E;
-    background: linear-gradient(130deg, rgba(11, 15, 14, 1) 25%, rgba(0, 1, 0, 1) 45%, rgba(107, 255, 137, 1) 75%, rgba(0, 1, 0, 1) 90%);
-}
-
 body > *:not(header, #grad-wrapper) {
-    @apply px-[8%]
-}
-
-#grad-wrapper > *{
-
     @apply px-[8%]
 }
 
@@ -88,7 +29,30 @@ button {
     @apply hover:cursor-pointer
 }
 
-#sticker {
+/* SINGLE ITEMS */
+
+#grad-wrapper {
+    background: #0B0F0E;
+    background: linear-gradient(130deg, rgba(11, 15, 14, 1) 25%, rgba(0, 1, 0, 1) 45%, rgba(107, 255, 137, 1) 75%, rgba(0, 1, 0, 1) 90%);
+}
+
+#present {
+    @apply px-[4%] md:px-[8%]
+}
+
+#navbar > a::after {
+    @apply scale-x-0 bg-secondary absolute transition-all duration-300 right-0 bottom-0 h-0.5 w-full
+}
+
+#navbar > a:hover::after, #navbar > a.active::after {
+    @apply scale-x-100
+}
+
+#cta-hero:hover {
+    box-shadow: var(--color-cta-darker) 0 0 16px 6px;
+}
+
+.sticker {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 24px 8px;
 }
 
@@ -99,13 +63,8 @@ button {
 @media (width > 768px) {
     .vision:hover {
         box-shadow: var(--color-cta-darker) 0px 0px 24px 4px;
-    }
-    
-}
-
-#cta-hero:hover {
-    box-shadow: var(--color-cta-darker) 0 0 16px 6px;
-}
+    }; 
+};
 
 #icons-wrapper::before {
     position: absolute;
@@ -121,7 +80,7 @@ button {
         rgba(11, 11, 11, 0.7),
         rgba(11, 11, 11, 0.4),
         rgba(11, 11, 11, 0.05)
-    )
+    );
 };
 
 #icons-wrapper::after {
@@ -141,21 +100,74 @@ button {
     )
 };
 
-#overlay {
-    pointer-events: none;
-}
 
-#navbar > a::after {
-    background-color: var(--color-text-secondary);
-    width: 100%;
-    height: 2px;
-    content: "";
-    position: absolute;
-    bottom: 0; 
-    right: 0;
-    @apply scale-x-0 transition-all duration-300
-}
+/* SERVICES */
 
-#navbar > a:hover::after, #navbar > a.active::after {
-    @apply scale-x-100
-}
+.card-wrapper {
+    @apply aspect-square transition-transform hover:-translate-y-4 perspective-midrange;
+    &:hover .card {
+        @apply rotate-y-180;
+    };
+};
+
+.card {
+    @apply transform-3d transition-transform duration-400;
+};
+
+.front-card, .back-card {
+    @apply aspect-square border-2 backface-hidden bg-sticker border-cta md:border-sticker-light md:hover:border-cta rounded-xl transition-colors duration-200
+};
+
+.back-card {
+    @apply md:border-cta;
+};
+
+.mobile-service-card {
+    @apply bg-sticker absolute inset-0 aspect-square rounded-xl border-2 border-cta w-[95%] left-1/2 top-1/2 -translate-x-1/2 transition-transform duration-400;
+};
+
+/* HAM MENU */
+
+#ham-menu {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+};
+
+#ham-menu-btn {
+  height: 22px;
+  width: 28px;
+  cursor: pointer;
+};
+
+#ham-menu-btn span {
+    @apply transition-all bg-white absolute duration-300 rounded-full left-0 h-0.75 w-full
+};
+
+#ham-menu-btn span:nth-child(1) {
+    top: 0;
+};
+
+#ham-menu-btn span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+};
+
+#ham-menu-btn span:nth-child(3) {
+    bottom: 0;
+};
+
+#ham-menu-btn.active span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+};
+
+#ham-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+};
+
+#ham-menu-btn.active span:nth-child(3) {
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+};
