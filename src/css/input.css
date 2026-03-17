@@ -40,8 +40,10 @@ button {
     @apply px-[4%] md:px-[8%]
 }
 
+
 #navbar > a::after {
-    @apply scale-x-0 bg-secondary absolute transition-all duration-300 right-0 bottom-0 h-0.5 w-full
+    content: "";
+    @apply scale-x-0 bg-text-primary absolute transition-all duration-300 right-0 bottom-0 h-0.5 w-full
 }
 
 #navbar > a:hover::after, #navbar > a.active::after {
@@ -115,7 +117,15 @@ button {
 };
 
 .front-card, .back-card {
-    @apply aspect-square border-2 backface-hidden bg-sticker border-cta md:border-sticker-light md:hover:border-cta rounded-xl transition-colors duration-200
+    @apply aspect-square border-2 backface-hidden bg-sticker border-cta md:border-sticker-light md:hover:border-cta rounded-xl transition-shadow duration-200;
+};
+
+.back-card {
+    box-shadow: var(--color-cta-darker) 0px 0px 24px 4px;
+}
+
+.front-card:hover {
+    box-shadow: var(--color-cta-darker) 0px 0px 24px 4px;
 };
 
 .back-card {

@@ -7,7 +7,6 @@
   <link rel="shortcut icon" href="/bendito-logo.png" type="image/jpg">
   <link rel="stylesheet" href="src/css/input.css">
   <link href="https://fonts.cdnfonts.com/css/coolvetica" rel="stylesheet">
-  <link rel="stylesheet" href="src/css/hamburguer.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
@@ -89,7 +88,7 @@
       <div class="h-[40%]">
         <h2 class="text-5xl sm:text-6xl xl:text-7xl text-text-primary font-[coolvetica] text-center">Nossos serviços</h2>
       </div>
-      <div id="services-wrapper" class="hidden w-full max-w-md md:max-w-4xl grid grid-cols-1 md:grid-cols-3 justify-center gap-8">
+      <div id="services-wrapper" class="hidden sm:grid w-full max-w-lg md:max-w-4xl grid-cols-2 md:grid-cols-3 justify-center gap-8">
         <div class="card-wrapper">
           <div class="card text-text-primary relative">
             <div class="front-card absolute inset-0">Front</div>
@@ -128,10 +127,10 @@
         </div>
       </div>
 
-      <div id="mobile-services-wrapper" class="w-full relative h-[50dvh] flex items-center justify-center text-text-primary">
+      <div id="mobile-services-wrapper" class="flex sm:hidden w-full relative h-[50dvh] items-center justify-center text-text-primary">
         <div id="arrow-pos" class="absolute aspect-square w-[95%] left-1/2 -translate-x-1/2 font-[Red_Hat_Text] font-bold">
-          <div id="arrow-left" class="absolute h-6 aspect-square hover:cursor-pointer -left-8 top-1/2 -translate-y-1/2 flex items-center justify-center bg-sticker-lighter rounded-full"><</div>
-          <div id="arrow-right" class="absolute h-6 aspect-square hover:cursor-pointer -right-8 top-1/2 -translate-y-1/2 flex items-center justify-center font-bold font-[Red_Hat_Text] bg-sticker-lighter rounded-full">></div>
+          <div id="arrow-left" class="absolute h-6 aspect-square hover:cursor-pointer -left-8 top-1/2 -translate-y-1/2 flex items-center justify-center bg-sticker-lighter rounded-full opacity-0 transition-opacity duration-200">&lt;</div>
+          <div id="arrow-right" class="absolute h-6 aspect-square hover:cursor-pointer -right-8 top-1/2 -translate-y-1/2 flex items-center justify-center bg-sticker-lighter rounded-full">&gt;</div>
         </div>
         <div class="mobile-service-card z-6 -translate-y-1/2">1 z6</div>
         <div class="mobile-service-card z-5 -translate-y-[48%] opacity-90">2 z5</div>

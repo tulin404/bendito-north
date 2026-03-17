@@ -103,27 +103,57 @@ setInterval(() => {
 
 
 // SERVICES SWIPING
-const leftArrow = document.getElementById('left-right');
+const leftArrow = document.getElementById('arrow-left');
 const rightArrow = document.getElementById('arrow-right');
 const mobileCards = Array.from(document.getElementsByClassName('mobile-service-card'));
 
 const transformPercentages = [50, 48, 46, 44, 42, 40];
+const opacities = [100, 90, 70, 50, 30, 10];
 let servicesIndex = 0;
 
+function getAllTranforms(element) {
+    const classes = Array.from(element.classList);
+    const transforms = classes.filter(cls => cls.startsWith('-translate'));
+    return transforms;
+};
+
+function getAllOpacities(element) {
+    const classes = Array.from(element.classList);
+    const opacities = classes.filter(cls => cls.startsWith('opacity'));
+    return opacities;
+};
+
+leftArrow.inert = true;
+
 rightArrow.addEventListener('click', () => {
-    if (++servicesIndex >= mobileCards.length - 1) {
-        mobileCards[servicesIndex - 1].classList.add('-translate-y-[110dvh]');
-        setTimeout(() => {
-            mobileCards[servicesIndex].classList.add('-translate-y-[50%]')
-        }, 600)
-        rightArrow.classList.add('hidden');
+    ++servicesIndex;
+    leftArrow.classList.remove('opacity-0');
+    leftArrow.inert = false;
+    if (servicesIndex >= mobileCards.length - 1) {
+        mobileCards[servicesIndex - 1].classList.add('-translate-y-[400dvh]');
+        mobileCards[servicesIndex].classList.add('-translate-y-[50%]', 'opacity-100')
+        rightArrow.classList.add('opacity-0');
+        rightArrow.inert = true;
     } else {
-        mobileCards[servicesIndex - 1].classList.add('-translate-y-[110dvh]');
-        setTimeout(() => {
-            console.log(servicesIndex)
-            const sliced = mobileCards.slice(servicesIndex);
-            console.log(sliced);
-            sliced.forEach((card, index) => card.classList.add(`-translate-y-[${transformPercentages[index]}%]`));
-        }, 600)
+        mobileCards[servicesIndex - 1].classList.add('-translate-y-[400dvh]');
+        const sliced = mobileCards.slice(servicesIndex);
+        sliced.forEach((card, index) => card.classList.add(`-translate-y-[${transformPercentages[index]}%]`, `opacity-${opacities[index]}`));
     };
+    console.log(servicesIndex)
+});
+
+leftArrow.addEventListener('click', () => {
+    --servicesIndex;
+    rightArrow.inert = false;
+    rightArrow.classList.remove('opacity-0');
+    if (servicesIndex <= 0) {
+        leftArrow.classList.add('opacity-0');
+    };
+    mobileCards[servicesIndex].classList.remove('-translate-y-[400dvh]');
+    const sliced = mobileCards.slice(servicesIndex + 1);
+    sliced.forEach(card => {
+        const transforms = getAllTranforms(card);
+        const opacities = getAllOpacities(card);
+        card.classList.remove(...transforms.slice(transforms.length - 1,), ...opacities.slice(opacities.length - 1));
+    });
 });
