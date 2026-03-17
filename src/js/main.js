@@ -103,6 +103,7 @@ setInterval(() => {
 
 
 // SERVICES SWIPING
+
 const leftArrow = document.getElementById('arrow-left');
 const rightArrow = document.getElementById('arrow-right');
 const mobileCards = Array.from(document.getElementsByClassName('mobile-service-card'));
@@ -139,7 +140,6 @@ rightArrow.addEventListener('click', () => {
         const sliced = mobileCards.slice(servicesIndex);
         sliced.forEach((card, index) => card.classList.add(`-translate-y-[${transformPercentages[index]}%]`, `opacity-${opacities[index]}`));
     };
-    console.log(servicesIndex)
 });
 
 leftArrow.addEventListener('click', () => {
