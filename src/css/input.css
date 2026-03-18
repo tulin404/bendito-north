@@ -198,15 +198,22 @@ button {
     animation: carousel-right 15s linear infinite;
 };
 
-#carousel-top::before, #carousel-bottom::before {
-    content: "";
+#carousel-bottom {
+    animation: carousel-left 15s linear infinite;
+};
+
+.overlay-carousel {
     background: rgba(0, 0, 0, 0);
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.3) 15%, rgba(0, 0, 0, 0.7) 55%, rgba(0, 0, 0, 0.3) 85%, rgba(0, 0, 0, 0) 95%);
-    @apply absolute inset-0 z-1;
+    @apply absolute w-[200dvw] top-0 bottom-0;
 };
 
 .carousel-vid {
-    @apply relative rounded-2xl w-40 sm:w-52 md:w-58 lg:w-62 z-5;
+    @apply relative transition-transform duration-200 rounded-2xl w-40 sm:w-52 md:w-58 lg:w-62 z-5;
+};
+
+.carousel-vid:hover {
+    @apply scale-105;
 };
 
 
@@ -215,5 +222,13 @@ button {
         transform: translateX(0);
     } to {
         transform: translateX(-50%);
+    };
+};
+
+@keyframes carousel-left {
+    from {
+        transform: translateX(-50%);
+    } to {
+        transform: translateX(0);
     };
 };
