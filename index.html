@@ -24,7 +24,7 @@
       <nav id="ham-menu" class="flex flex-col gap-4 text-text-secondary font-bold text-lg font-[Red_Hat_Text] text-left -translate-x-[100dvw] h-dvh sm:hidden fixed top-0 bottom-0 left-0 w-[45dvw] z-400 bg-sticker-light transition-transform duration-200">
         <a href="#" class="ham-link pl-[10%] pt-24">Início</a>
         <a href="#present" class="ham-link pl-[10%]">Quem somos</a>
-        <a href="" class="ham-link pl-[10%]">Serviços</a>
+        <a href="#services" class="ham-link pl-[10%]">Serviços</a>
         <a href="" class="ham-link pl-[10%]">Fale conosco</a>
         <a href="" class="ham-link pl-[10%]">Portfolio</a>
         <a href="" class="ham-link pl-[10%]">Clientes</a>
@@ -33,7 +33,7 @@
       <a href="#" class="sm:h-[80%] h-[80%]"><img id="header-logo" class="h-full" src="/bendito-logo.png" alt=""></a>
       <nav id="navbar" class="text-text-secondary text-nowrap hidden sm:flex font-[Red_Hat_Text] tracking-tight font-semibold text-sm md:text-base gap-4 lg:gap-8 lg:text-lg">
         <a class="relative ham-link transition-all duration-200 hover:scale-105" href="#present">Quem somos</a>
-        <a class="relative ham-link transition-all duration-200 hover:scale-105" href="">Serviços</a>
+        <a class="relative ham-link transition-all duration-200 hover:scale-105" href="#services">Serviços</a>
         <a class="relative ham-link transition-all duration-200 hover:scale-105" href="">Portfolio</a>
         <a class="relative ham-link transition-all duration-200 hover:scale-105" href="">Clientes</a>
         <a class="relative ham-link transition-all duration-200 hover:scale-105" href="">Depoimentos</a>
@@ -128,7 +128,7 @@
         </div>
       </div>
 
-      <div id="mobile-services-wrapper" class="flex sm:hidden w-full relative h-[50dvh] items-center justify-center text-text-primary">
+      <div id="mobile-services-wrapper" class="flex sm:hidden w-full relative h-[40dvh] items-center justify-center text-text-primary">
         <div id="arrow-pos" class="absolute aspect-square w-[95%] left-1/2 -translate-x-1/2 font-[Red_Hat_Text] font-bold">
           <div id="arrow-left" class="absolute h-6 aspect-square hover:cursor-pointer -left-8 top-1/2 -translate-y-1/2 flex items-center justify-center bg-sticker-lighter rounded-full opacity-0 transition-opacity duration-200">&lt;</div>
           <div id="arrow-right" class="absolute h-6 aspect-square hover:cursor-pointer -right-8 top-1/2 -translate-y-1/2 flex items-center justify-center bg-sticker-lighter rounded-full">&gt;</div>
@@ -142,32 +142,48 @@
       </div>
     </section>
     <div id="grad-wrapper-2">
-      <section id="portfolio" class="min-h-dvh overflow-hidden">
-        <div id="carousel-wrapper" class="flex flex-col gap-8 md:gap-12 lg:gap-16">
-          <div id="carousel-top" class="relative flex gap-[6%]">
-            <video class="carousel-vid ml-[3%]" autoplay muted loop playsinline src="/drcarlos.mp4"></video>
-            <video class="carousel-vid" autoplay muted loop playsinline src="/piaget.mp4"></video>
-            <video class="carousel-vid" autoplay muted loop playsinline src="/example.mp4"></video>
-            <video class="carousel-vid" autoplay muted loop playsinline src="/controlpest.mp4"></video>
-            <video class="carousel-vid" autoplay muted loop playsinline src="/drcarlos.mp4"></video>
-            <video class="carousel-vid" autoplay muted loop playsinline src="/piaget.mp4"></video>
-            <video class="carousel-vid" autoplay muted loop playsinline src="/example.mp4"></video>
-            <video class="carousel-vid mr-[3%]" autoplay muted loop playsinline src="/controlpest.mp4"></video>
+      <section id="portfolio" class="min-h-dvh py-6">
+        <div id="carousel-wrapper" class="flex overflow-x-hidden flex-col gap-8 md:gap-12 lg:gap-16">
+          <div id="carousel-top" class="relative flex gap-16 min-w-max py-6">
+            <video class="carousel-vid ml-8" poster="/drcarlos-thumb.jpg" preload="none" loop playsinline src="/drcarlos.mp4" ></video>
+            <video class="carousel-vid" poster="/piaget-thumb.jpg" preload="none" loop playsinline src="/piaget.mp4" ></video>
+            <video class="carousel-vid" poster="/example-thumb.jpg" preload="none" loop playsinline src="/example.mp4" ></video>
+            <video class="carousel-vid" poster="/controlpest-thumb.jpg" preload="none" loop playsinline src="/controlpest.mp4" ></video>
+            <video class="carousel-vid" poster="/drcarlos-thumb.jpg" preload="none" loop playsinline src="/drcarlos.mp4" ></video>
+            <video class="carousel-vid" poster="/piaget-thumb.jpg" preload="none" loop playsinline src="/piaget.mp4" ></video>
+            <video class="carousel-vid" poster="/example-thumb.jpg" preload="none" loop playsinline src="/example.mp4" ></video>
+            <video class="carousel-vid mr-8 lg:m-0" poster="/controlpest-thumb.jpg" preload="none" loop playsinline src="/controlpest.mp4" ></video>
+            <video class="carousel-vid hidden lg:block" poster="/drcarlos-thumb.jpg" preload="none" loop playsinline src="/drcarlos.mp4" ></video>
+            <video class="carousel-vid hidden lg:block" poster="/piaget-thumb.jpg" preload="none" loop playsinline src="/piaget.mp4" ></video>
+            <video class="carousel-vid hidden lg:block" poster="/example-thumb.jpg" preload="none" loop playsinline src="/example.mp4" ></video>
+            <video class="carousel-vid hidden lg:block" poster="/controlpest-thumb.jpg" preload="none" loop playsinline src="/controlpest.mp4" ></video>
+            <video class="carousel-vid hidden lg:block" poster="/drcarlos-thumb.jpg" preload="none" loop playsinline src="/drcarlos.mp4" ></video>
+            <video class="carousel-vid hidden lg:block" poster="/piaget-thumb.jpg" preload="none" loop playsinline src="/piaget.mp4" ></video>
+            <video class="carousel-vid hidden lg:block" poster="/example-thumb.jpg" preload="none" loop playsinline src="/example.mp4" ></video>
+            <video class="carousel-vid hidden lg:block lg:mr-8" poster="/controlpest-thumb.jpg" preload="none" loop playsinline src="/controlpest.mp4" ></video>
             <div class="overlay-carousel"></div>
           </div>
           <div id="carousel-writing" class="relative m-8">
             <h2 class="text-5xl sm:text-6xl xl:text-8xl text-text-primary font-[coolvetica] text-center">Nosso portfolio</h2>
-            <p class="text-text-secondary absolute font-[Red_Hat_Text] left-[40%] md:left-[45%] md:text-lg lg:left-1/2 lg:text-xl"><i><g class="text-cta font-semibold">Resultados</g> da nossa equipe</i></p>
+            <p class="text-text-secondary tracking-tighter absolute font-[Red_Hat_Text] left-[40%] md:left-[45%] md:text-lg lg:left-1/2 lg:text-xl"><i><g class="text-cta font-semibold">Resultados</g> da nossa equipe</i></p>
           </div>
-          <div id="carousel-bottom" class="relative flex gap-[6%]">
-            <video class="carousel-vid ml-[3%]" autoplay muted loop playsinline src="/drcarlos.mp4"></video>
-            <video class="carousel-vid" autoplay muted loop playsinline src="/piaget.mp4"></video>
-            <video class="carousel-vid" autoplay muted loop playsinline src="/example.mp4"></video>
-            <video class="carousel-vid" autoplay muted loop playsinline src="/controlpest.mp4"></video>
-            <video class="carousel-vid" autoplay muted loop playsinline src="/drcarlos.mp4"></video>
-            <video class="carousel-vid" autoplay muted loop playsinline src="/piaget.mp4"></video>
-            <video class="carousel-vid" autoplay muted loop playsinline src="/example.mp4"></video>
-            <video class="carousel-vid mr-[3%]" autoplay muted loop playsinline src="/controlpest.mp4"></video>
+          <div id="carousel-bottom" class="relative flex gap-16 min-w-max py-6">
+            <video class="carousel-vid ml-8" poster="/drcarlos-thumb.jpg" preload="none" loop playsinline src="/drcarlos.mp4" ></video>
+            <video class="carousel-vid" poster="/piaget-thumb.jpg" preload="none" loop playsinline src="/piaget.mp4" ></video>
+            <video class="carousel-vid" poster="/example-thumb.jpg" preload="none" loop playsinline src="/example.mp4" ></video>
+            <video class="carousel-vid" poster="/controlpest-thumb.jpg" preload="none" loop playsinline src="/controlpest.mp4" ></video>
+            <video class="carousel-vid" poster="/drcarlos-thumb.jpg" preload="none" loop playsinline src="/drcarlos.mp4" ></video>
+            <video class="carousel-vid" poster="/piaget-thumb.jpg" preload="none" loop playsinline src="/piaget.mp4" ></video>
+            <video class="carousel-vid" poster="/example-thumb.jpg" preload="none" loop playsinline src="/example.mp4" ></video>
+            <video class="carousel-vid mr-8 lg:m-0" poster="/controlpest-thumb.jpg" preload="none" loop playsinline src="/controlpest.mp4" ></video>
+            <video class="carousel-vid hidden lg:block" poster="/drcarlos-thumb.jpg" preload="none" loop playsinline src="/drcarlos.mp4" ></video>
+            <video class="carousel-vid hidden lg:block" poster="/piaget-thumb.jpg" preload="none" loop playsinline src="/piaget.mp4" ></video>
+            <video class="carousel-vid hidden lg:block" poster="/example-thumb.jpg" preload="none" loop playsinline src="/example.mp4" ></video>
+            <video class="carousel-vid hidden lg:block" poster="/controlpest-thumb.jpg" preload="none" loop playsinline src="/controlpest.mp4" ></video>
+            <video class="carousel-vid hidden lg:block" poster="/drcarlos-thumb.jpg" preload="none" loop playsinline src="/drcarlos.mp4" ></video>
+            <video class="carousel-vid hidden lg:block" poster="/piaget-thumb.jpg" preload="none" loop playsinline src="/piaget.mp4" ></video>
+            <video class="carousel-vid hidden lg:block" poster="/example-thumb.jpg" preload="none" loop playsinline src="/example.mp4" ></video>
+            <video class="carousel-vid hidden lg:block lg:mr-8" poster="/controlpest-thumb.jpg" preload="none" loop playsinline src="/controlpest.mp4" ></video>
             <div class="overlay-carousel"></div>
           </div>
         </div>
@@ -175,5 +191,32 @@
       <section id="test" class="h-dvh"></section>
     </div>
     <section id="test" class="h-dvh"></section>
+    <section id="test" class="h-[25dvh] flex flex-col gap-[12%]">
+      <h2 class="text-5xl sm:text-6xl xl:text-7xl text-text-primary font-[coolvetica] text-center tracking-tight">Onde nos encontrar</h2>
+      <div id="social-wrapper" class="flex justify-center gap-[6%] md:gap-8">
+        <div class="social relative">
+          <a href="">
+            <svg class="std social-icon h-10 lg:h-12 w-10 lg:w-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M10.202,2.098c-1.49,.07-2.507,.308-3.396,.657-.92,.359-1.7,.84-2.477,1.619-.776,.779-1.254,1.56-1.61,2.481-.345,.891-.578,1.909-.644,3.4-.066,1.49-.08,1.97-.073,5.771s.024,4.278,.096,5.772c.071,1.489,.308,2.506,.657,3.396,.359,.92,.84,1.7,1.619,2.477,.779,.776,1.559,1.253,2.483,1.61,.89,.344,1.909,.579,3.399,.644,1.49,.065,1.97,.08,5.771,.073,3.801-.007,4.279-.024,5.773-.095s2.505-.309,3.395-.657c.92-.36,1.701-.84,2.477-1.62s1.254-1.561,1.609-2.483c.345-.89,.579-1.909,.644-3.398,.065-1.494,.081-1.971,.073-5.773s-.024-4.278-.095-5.771-.308-2.507-.657-3.397c-.36-.92-.84-1.7-1.619-2.477s-1.561-1.254-2.483-1.609c-.891-.345-1.909-.58-3.399-.644s-1.97-.081-5.772-.074-4.278,.024-5.771,.096m.164,25.309c-1.365-.059-2.106-.286-2.6-.476-.654-.252-1.12-.557-1.612-1.044s-.795-.955-1.05-1.608c-.192-.494-.423-1.234-.487-2.599-.069-1.475-.084-1.918-.092-5.656s.006-4.18,.071-5.656c.058-1.364,.286-2.106,.476-2.6,.252-.655,.556-1.12,1.044-1.612s.955-.795,1.608-1.05c.493-.193,1.234-.422,2.598-.487,1.476-.07,1.919-.084,5.656-.092,3.737-.008,4.181,.006,5.658,.071,1.364,.059,2.106,.285,2.599,.476,.654,.252,1.12,.555,1.612,1.044s.795,.954,1.051,1.609c.193,.492,.422,1.232,.486,2.597,.07,1.476,.086,1.919,.093,5.656,.007,3.737-.006,4.181-.071,5.656-.06,1.365-.286,2.106-.476,2.601-.252,.654-.556,1.12-1.045,1.612s-.955,.795-1.608,1.05c-.493,.192-1.234,.422-2.597,.487-1.476,.069-1.919,.084-5.657,.092s-4.18-.007-5.656-.071M21.779,8.517c.002,.928,.755,1.679,1.683,1.677s1.679-.755,1.677-1.683c-.002-.928-.755-1.679-1.683-1.677,0,0,0,0,0,0-.928,.002-1.678,.755-1.677,1.683m-12.967,7.496c.008,3.97,3.232,7.182,7.202,7.174s7.183-3.232,7.176-7.202c-.008-3.97-3.233-7.183-7.203-7.175s-7.182,3.233-7.174,7.203m2.522-.005c-.005-2.577,2.08-4.671,4.658-4.676,2.577-.005,4.671,2.08,4.676,4.658,.005,2.577-2.08,4.671-4.658,4.676-2.577,.005-4.671-2.079-4.676-4.656h0" fill="currentColor"/></svg>
+            <svg class="col social-icon absolute top-1/2 left-1/2 -translate-1/2 h-9 lg:h-11 w-9 lg:w-11 opacity-0" viewBox="0 0 2500 2500" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="0" cx="332.14" cy="2511.81" r="3263.54" gradientUnits="userSpaceOnUse"><stop offset=".09" stop-color="#fa8f21"/><stop offset=".78" stop-color="#d82d7e"/></radialGradient><radialGradient id="1" cx="1516.14" cy="2623.81" r="2572.12" gradientUnits="userSpaceOnUse"><stop offset=".64" stop-color="#8c3aaa" stop-opacity="0"/><stop offset="1" stop-color="#8c3aaa"/></radialGradient></defs><path d="M833.4,1250c0-230.11,186.49-416.7,416.6-416.7s416.7,186.59,416.7,416.7-186.59,416.7-416.7,416.7S833.4,1480.11,833.4,1250m-225.26,0c0,354.5,287.36,641.86,641.86,641.86S1891.86,1604.5,1891.86,1250,1604.5,608.14,1250,608.14,608.14,895.5,608.14,1250M1767.27,582.69a150,150,0,1,0,150.06-149.94h-0.06a150.07,150.07,0,0,0-150,149.94M745,2267.47c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28,7.27-505.15c5.55-121.87,26-188,43-232.13,22.72-58.36,49.78-100,93.5-143.78s85.32-70.88,143.78-93.5c44-17.16,110.26-37.46,232.13-43,131.76-6.06,171.34-7.27,505-7.27s373.28,1.31,505.15,7.27c121.87,5.55,188,26,232.13,43,58.36,22.62,100,49.78,143.78,93.5s70.78,85.42,93.5,143.78c17.16,44,37.46,110.26,43,232.13,6.06,131.87,7.27,171.34,7.27,505.15s-1.21,373.28-7.27,505.15c-5.55,121.87-25.95,188.11-43,232.13-22.72,58.36-49.78,100-93.5,143.68s-85.42,70.78-143.78,93.5c-44,17.16-110.26,37.46-232.13,43-131.76,6.06-171.34,7.27-505.15,7.27s-373.28-1.21-505-7.27M734.65,7.57c-133.07,6.06-224,27.16-303.41,58.06C349,97.54,279.38,140.35,209.81,209.81S97.54,349,65.63,431.24c-30.9,79.46-52,170.34-58.06,303.41C1.41,867.93,0,910.54,0,1250s1.41,382.07,7.57,515.35c6.06,133.08,27.16,223.95,58.06,303.41,31.91,82.19,74.62,152,144.18,221.43S349,2402.37,431.24,2434.37c79.56,30.9,170.34,52,303.41,58.06C868,2498.49,910.54,2500,1250,2500s382.07-1.41,515.35-7.57c133.08-6.06,223.95-27.16,303.41-58.06,82.19-32,151.86-74.72,221.43-144.18s112.18-139.24,144.18-221.43c30.9-79.46,52.1-170.34,58.06-303.41,6.06-133.38,7.47-175.89,7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2150.95,97.54,2068.86,65.63c-79.56-30.9-170.44-52.1-303.41-58.06C1632.17,1.51,1589.56,0,1250.1,0S868,1.41,734.65,7.57" fill="url(#0)"/><path d="M833.4,1250c0-230.11,186.49-416.7,416.6-416.7s416.7,186.59,416.7,416.7-186.59,416.7-416.7,416.7S833.4,1480.11,833.4,1250m-225.26,0c0,354.5,287.36,641.86,641.86,641.86S1891.86,1604.5,1891.86,1250,1604.5,608.14,1250,608.14,608.14,895.5,608.14,1250M1767.27,582.69a150,150,0,1,0,150.06-149.94h-0.06a150.07,150.07,0,0,0-150,149.94M745,2267.47c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28,7.27-505.15c5.55-121.87,26-188,43-232.13,22.72-58.36,49.78-100,93.5-143.78s85.32-70.88,143.78-93.5c44-17.16,110.26-37.46,232.13-43,131.76-6.06,171.34-7.27,505-7.27s373.28,1.31,505.15,7.27c121.87,5.55,188,26,232.13,43,58.36,22.62,100,49.78,143.78,93.5s70.78,85.42,93.5,143.78c17.16,44,37.46,110.26,43,232.13,6.06,131.87,7.27,171.34,7.27,505.15s-1.21,373.28-7.27,505.15c-5.55,121.87-25.95,188.11-43,232.13-22.72,58.36-49.78,100-93.5,143.68s-85.42,70.78-143.78,93.5c-44,17.16-110.26,37.46-232.13,43-131.76,6.06-171.34,7.27-505.15,7.27s-373.28-1.21-505-7.27M734.65,7.57c-133.07,6.06-224,27.16-303.41,58.06C349,97.54,279.38,140.35,209.81,209.81S97.54,349,65.63,431.24c-30.9,79.46-52,170.34-58.06,303.41C1.41,867.93,0,910.54,0,1250s1.41,382.07,7.57,515.35c6.06,133.08,27.16,223.95,58.06,303.41,31.91,82.19,74.62,152,144.18,221.43S349,2402.37,431.24,2434.37c79.56,30.9,170.34,52,303.41,58.06C868,2498.49,910.54,2500,1250,2500s382.07-1.41,515.35-7.57c133.08-6.06,223.95-27.16,303.41-58.06,82.19-32,151.86-74.72,221.43-144.18s112.18-139.24,144.18-221.43c30.9-79.46,52.1-170.34,58.06-303.41,6.06-133.38,7.47-175.89,7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2150.95,97.54,2068.86,65.63c-79.56-30.9-170.44-52.1-303.41-58.06C1632.17,1.51,1589.56,0,1250.1,0S868,1.41,734.65,7.57" fill="url(#1)"/></svg>
+          </a>
+        </div>
+        <div class="social">
+          <a href="">
+            <svg id="whatsapp" class="social-icon h-10 lg:h-12 w-10 lg:w-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M25.873,6.069c-2.619-2.623-6.103-4.067-9.814-4.069C8.411,2,2.186,8.224,2.184,15.874c-.001,2.446,.638,4.833,1.852,6.936l-1.969,7.19,7.355-1.929c2.026,1.106,4.308,1.688,6.63,1.689h.006c7.647,0,13.872-6.224,13.874-13.874,.001-3.708-1.44-7.193-4.06-9.815h0Zm-9.814,21.347h-.005c-2.069,0-4.099-.557-5.87-1.607l-.421-.25-4.365,1.145,1.165-4.256-.274-.436c-1.154-1.836-1.764-3.958-1.763-6.137,.003-6.358,5.176-11.531,11.537-11.531,3.08,.001,5.975,1.202,8.153,3.382,2.177,2.179,3.376,5.077,3.374,8.158-.003,6.359-5.176,11.532-11.532,11.532h0Zm6.325-8.636c-.347-.174-2.051-1.012-2.369-1.128-.318-.116-.549-.174-.78,.174-.231,.347-.895,1.128-1.098,1.359-.202,.232-.405,.26-.751,.086-.347-.174-1.464-.54-2.788-1.72-1.03-.919-1.726-2.054-1.929-2.402-.202-.347-.021-.535,.152-.707,.156-.156,.347-.405,.52-.607,.174-.202,.231-.347,.347-.578,.116-.232,.058-.434-.029-.607-.087-.174-.78-1.88-1.069-2.574-.281-.676-.567-.584-.78-.595-.202-.01-.433-.012-.665-.012s-.607,.086-.925,.434c-.318,.347-1.213,1.186-1.213,2.892s1.242,3.355,1.416,3.587c.174,.232,2.445,3.733,5.922,5.235,.827,.357,1.473,.571,1.977,.73,.83,.264,1.586,.227,2.183,.138,.666-.1,2.051-.839,2.34-1.649,.289-.81,.289-1.504,.202-1.649s-.318-.232-.665-.405h0Z" fill="currentColor"></path></svg>
+          </a>
+        </div>
+        <div class="social relative">
+          <a href="">
+            <svg class="std social-icon h-10 lg:h-12 w-10 lg:w-12" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Linkedin</title><g id="Icon/Social/linkedin-color" stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd"><path d="M20.9716667,33.5527338 L25.001,33.5527338 L25.001,27.1328007 C25.001,25.439485 25.3213333,23.7988354 27.4206667,23.7988354 C29.491,23.7988354 29.517,25.7351486 29.517,27.2404662 L29.517,33.5527338 L33.5506667,33.5527338 L33.5506667,26.4341413 C33.5506667,22.9381777 32.796,20.2505391 28.711,20.2505391 C26.7483333,20.2505391 25.432,21.3265278 24.8943333,22.3471839 L24.839,22.3471839 L24.839,20.5725357 L20.9716667,20.5725357 L20.9716667,33.5527338 Z M16.423,14.1202696 C15.1273333,14.1202696 14.0823333,15.1682587 14.0823333,16.4595785 C14.0823333,17.7508984 15.1273333,18.7992208 16.423,18.7992208 C17.7133333,18.7992208 18.761,17.7508984 18.761,16.4595785 C18.761,15.1682587 17.7133333,14.1202696 16.423,14.1202696 L16.423,14.1202696 Z M14.4026667,33.5527338 L18.4406667,33.5527338 L18.4406667,20.5725357 L14.4026667,20.5725357 L14.4026667,33.5527338 Z M9.76633333,40 C8.79033333,40 8,39.2090082 8,38.2336851 L8,9.76631493 C8,8.79065843 8.79033333,8 9.76633333,8 L38.234,8 C39.2093333,8 40,8.79065843 40,9.76631493 L40,38.2336851 C40,39.2090082 39.2093333,40 38.234,40 L9.76633333,40 Z" id="Shape" fill="currentColor"></path></g></svg>
+            <svg class="col social-icon absolute top-1/2 left-1/2 -translate-1/2 h-7 lg:h-9 w-7 lg:w-9 opacity-0" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g fill="none"> <path d="M0 18.338C0 8.216 8.474 0 18.92 0h218.16C247.53 0 256 8.216 256 18.338v219.327C256 247.79 247.53 256 237.08 256H18.92C8.475 256 0 247.791 0 237.668V18.335z" fill="#069"></path> <path d="M77.796 214.238V98.986H39.488v115.252H77.8zM58.65 83.253c13.356 0 21.671-8.85 21.671-19.91-.25-11.312-8.315-19.915-21.417-19.915-13.111 0-21.674 8.603-21.674 19.914 0 11.06 8.312 19.91 21.169 19.91h.248zM99 214.238h38.305v-64.355c0-3.44.25-6.889 1.262-9.346 2.768-6.885 9.071-14.012 19.656-14.012 13.858 0 19.405 10.568 19.405 26.063v61.65h38.304v-66.082c0-35.399-18.896-51.872-44.099-51.872-20.663 0-29.738 11.549-34.78 19.415h.255V98.99H99.002c.5 10.812-.003 115.252-.003 115.252z" fill="#ffffff"></path> </g> </g></svg>
+          </a>
+        </div>
+        <div class="social">
+          <a href="">
+            <svg class="social-icon h-10 lg:h-12 w-10 lg:w-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M10.202,2.098c-1.49,.07-2.507,.308-3.396,.657-.92,.359-1.7,.84-2.477,1.619-.776,.779-1.254,1.56-1.61,2.481-.345,.891-.578,1.909-.644,3.4-.066,1.49-.08,1.97-.073,5.771s.024,4.278,.096,5.772c.071,1.489,.308,2.506,.657,3.396,.359,.92,.84,1.7,1.619,2.477,.779,.776,1.559,1.253,2.483,1.61,.89,.344,1.909,.579,3.399,.644,1.49,.065,1.97,.08,5.771,.073,3.801-.007,4.279-.024,5.773-.095s2.505-.309,3.395-.657c.92-.36,1.701-.84,2.477-1.62s1.254-1.561,1.609-2.483c.345-.89,.579-1.909,.644-3.398,.065-1.494,.081-1.971,.073-5.773s-.024-4.278-.095-5.771-.308-2.507-.657-3.397c-.36-.92-.84-1.7-1.619-2.477s-1.561-1.254-2.483-1.609c-.891-.345-1.909-.58-3.399-.644s-1.97-.081-5.772-.074-4.278,.024-5.771,.096m.164,25.309c-1.365-.059-2.106-.286-2.6-.476-.654-.252-1.12-.557-1.612-1.044s-.795-.955-1.05-1.608c-.192-.494-.423-1.234-.487-2.599-.069-1.475-.084-1.918-.092-5.656s.006-4.18,.071-5.656c.058-1.364,.286-2.106,.476-2.6,.252-.655,.556-1.12,1.044-1.612s.955-.795,1.608-1.05c.493-.193,1.234-.422,2.598-.487,1.476-.07,1.919-.084,5.656-.092,3.737-.008,4.181,.006,5.658,.071,1.364,.059,2.106,.285,2.599,.476,.654,.252,1.12,.555,1.612,1.044s.795,.954,1.051,1.609c.193,.492,.422,1.232,.486,2.597,.07,1.476,.086,1.919,.093,5.656,.007,3.737-.006,4.181-.071,5.656-.06,1.365-.286,2.106-.476,2.601-.252,.654-.556,1.12-1.045,1.612s-.955,.795-1.608,1.05c-.493,.192-1.234,.422-2.597,.487-1.476,.069-1.919,.084-5.657,.092s-4.18-.007-5.656-.071M21.779,8.517c.002,.928,.755,1.679,1.683,1.677s1.679-.755,1.677-1.683c-.002-.928-.755-1.679-1.683-1.677,0,0,0,0,0,0-.928,.002-1.678,.755-1.677,1.683m-12.967,7.496c.008,3.97,3.232,7.182,7.202,7.174s7.183-3.232,7.176-7.202c-.008-3.97-3.233-7.183-7.203-7.175s-7.182,3.233-7.174,7.203m2.522-.005c-.005-2.577,2.08-4.671,4.658-4.676,2.577-.005,4.671,2.08,4.676,4.658,.005,2.577-2.08,4.671-4.658,4.676-2.577,.005-4.671-2.079-4.676-4.656h0" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
 </body>
 </html>

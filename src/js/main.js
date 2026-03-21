@@ -157,3 +157,45 @@ leftArrow.addEventListener('click', () => {
         card.classList.remove(...transforms.slice(transforms.length - 1,), ...opacities.slice(opacities.length - 1));
     });
 });
+
+// PORTFOLIO
+
+const carouselTop = document.getElementById('carousel-top');
+const carouselBottom = document.getElementById('carousel-bottom');
+const videos = document.querySelectorAll('video');
+
+window.addEventListener('load', () => {
+    if (window.innerWidth <= 640) {
+        window.addEventListener('touchstart', (e) => {
+            if (e.target.classList.contains('carousel-vid')) {
+                carouselTop.classList.add('paused');
+                carouselBottom.classList.add('paused');
+                videos.forEach(video => video.pause());
+                videos.forEach(video => video.classList.remove('scale-120'));
+                e.target.play();
+                e.target.classList.add('scale-120');
+            } else {
+                carouselTop.classList.remove('paused');
+                carouselBottom.classList.remove('paused');
+                videos.forEach(video => video.pause());
+                videos.forEach(video => video.classList.remove('scale-120'));
+            };
+        });
+    } else {
+        window.addEventListener('mouseover', (e) => {
+            if (e.target.classList.contains('carousel-vid')) {
+                carouselTop.classList.add('paused');
+                carouselBottom.classList.add('paused');
+                e.target.play();
+            };
+        });
+
+        window.addEventListener('mouseout', (e) => {
+            if (e.target.classList.contains('carousel-vid')) {
+                carouselTop.classList.remove('paused');
+                carouselBottom.classList.remove('paused');
+                e.target.pause();
+            };
+        });
+    };
+});
