@@ -177,8 +177,13 @@ button {
     @apply aspect-square border-2 backface-hidden bg-sticker border-cta md:border-sticker-light md:hover:border-cta rounded-xl transition-shadow duration-200;
 };
 
+.front-card {
+    @apply text-3xl flex flex-col items-center justify-center gap-4 font-[coolvetica]
+}
+
 .back-card {
     box-shadow: var(--color-cta-darker) 0px 0px 24px 4px;
+    @apply font-[Red_Hat_Text] font-medium text-lg text-center px-2
 }
 
 .front-card:hover {
@@ -194,6 +199,10 @@ button {
 };
 
 /* PORTFOLIO */
+
+#portfolio {
+    padding: 0 !important
+}
 
 .paused {
     animation-play-state: paused !important;
@@ -297,3 +306,9 @@ button {
         transform: translateX(-50%);
     }
 };
+
+@media (width >= 524px) {
+    .mobile-service-card {
+        @apply w-[80%]
+    }
+}

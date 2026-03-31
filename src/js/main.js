@@ -129,10 +129,15 @@ leftArrow.inert = true;
 rightArrow.addEventListener('click', () => {
     ++servicesIndex;
     leftArrow.classList.remove('opacity-0');
-    leftArrow.inert = false;
+    leftArrow.inert = true;
+    rightArrow.inert = true;
+    setTimeout(() => {
+        leftArrow.inert = false;
+        rightArrow.inert = false;
+    }, 500);
     if (servicesIndex >= mobileCards.length - 1) {
         mobileCards[servicesIndex - 1].classList.add('-translate-y-[400dvh]');
-        mobileCards[servicesIndex].classList.add('-translate-y-[50%]', 'opacity-100')
+        mobileCards[servicesIndex].classList.add('-translate-y-[50%]', 'opacity-100');
         rightArrow.classList.add('opacity-0');
         rightArrow.inert = true;
     } else {
@@ -144,10 +149,16 @@ rightArrow.addEventListener('click', () => {
 
 leftArrow.addEventListener('click', () => {
     --servicesIndex;
-    rightArrow.inert = false;
+    rightArrow.inert = true;
+    leftArrow.inert = true;
+    setTimeout(() => {
+        leftArrow.inert = false;
+        rightArrow.inert = false;
+    }, 500);
     rightArrow.classList.remove('opacity-0');
     if (servicesIndex <= 0) {
         leftArrow.classList.add('opacity-0');
+        leftArrow.inert = true;
     };
     mobileCards[servicesIndex].classList.remove('-translate-y-[400dvh]');
     const sliced = mobileCards.slice(servicesIndex + 1);
@@ -163,6 +174,7 @@ leftArrow.addEventListener('click', () => {
 const carouselTop = document.getElementById('carousel-top');
 const carouselBottom = document.getElementById('carousel-bottom');
 const videos = document.querySelectorAll('video');
+videos.forEach(video => video.muted = true)
 
 window.addEventListener('load', () => {
     if (window.innerWidth <= 640) {
@@ -171,14 +183,14 @@ window.addEventListener('load', () => {
                 carouselTop.classList.add('paused');
                 carouselBottom.classList.add('paused');
                 videos.forEach(video => video.pause());
-                videos.forEach(video => video.classList.remove('scale-120'));
+                videos.forEach(video => video.classList.remove('scale-110'));
                 e.target.play();
-                e.target.classList.add('scale-120');
+                e.target.classList.add('scale-110');
             } else {
                 carouselTop.classList.remove('paused');
                 carouselBottom.classList.remove('paused');
                 videos.forEach(video => video.pause());
-                videos.forEach(video => video.classList.remove('scale-120'));
+                videos.forEach(video => video.classList.remove('scale-110'));
             };
         });
     } else {
@@ -186,7 +198,17 @@ window.addEventListener('load', () => {
             if (e.target.classList.contains('carousel-vid')) {
                 carouselTop.classList.add('paused');
                 carouselBottom.classList.add('paused');
-                e.target.play();
+                e.target.preload = "auto";
+                e.target.load();
+                const playPromise = e.target.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.catch(() => {
+                        e.target.addEventListener("canplay", () => {
+                            e.target.play();
+                        }, { once: true });
+                    });
+                }
             };
         });
 
@@ -199,3 +221,5 @@ window.addEventListener('load', () => {
         });
     };
 });
+
+// VIDEOS PRELOAD
