@@ -15,7 +15,7 @@
 };
 
 html {
-    scroll-padding-top: 48px;
+    scroll-padding-top: 128px;
 }
 
 header {
@@ -190,7 +190,7 @@ button {
 };
 
 .mobile-service-card {
-    @apply bg-sticker absolute inset-0 aspect-square rounded-xl border-2 border-cta w-[95%] left-1/2 top-1/2 -translate-x-1/2 transition-transform duration-400;
+    @apply bg-sticker absolute inset-0 aspect-square rounded-xl border-2 border-cta w-[80%] left-1/2 top-1/2 -translate-x-1/2 transition-transform duration-400;
 };
 
 /* PORTFOLIO */
@@ -220,7 +220,7 @@ button {
 };
 
 .carousel-vid {
-    @apply relative transition-transform duration-200 rounded-2xl w-40 sm:w-52 md:w-58 lg:w-62 z-5;
+    @apply relative transition-transform duration-200 rounded-2xl w-44 sm:w-52 md:w-58 lg:w-62 z-5;
 };
 
 .carousel-vid:hover {
@@ -231,7 +231,7 @@ button {
 /* SOCIAL */
 
 .social {
-    @apply bg-sticker-lighter/50 backdrop-blur-xl border border-border-sticker-lighter rounded-[100%] p-2 transition-all duration-200 flex items-center justify-center
+    @apply bg-sticker-lighter/50 backdrop-blur-xl aspect-square border border-border-sticker-lighter rounded-[50%] p-1.5 transition-all duration-200 flex items-center justify-center
 }
 
 .social:hover {
@@ -240,11 +240,23 @@ button {
 
 .social-icon {
     color: var(--color-text-primary);
-    @apply transition-all duration-300 
+    @apply transition-all duration-300 w-full h-full 
 }
+
+.social #whatsapp {
+    @apply text-cta sm:text-white
+};
 
 .social:hover #whatsapp {
     color: var(--color-cta);
+}
+
+.std {
+    @apply opacity-0 sm:opacity-100
+}
+
+.col {
+    @apply opacity-100 sm:opacity-0 left-1/2 -translate-1/2 top-1/2
 }
 
 .social:hover .std {
@@ -254,6 +266,27 @@ button {
 .social:hover .col {
     opacity: 1;
 };
+
+.social:hover {
+    #fpath {
+        fill: #1877f2;
+    };
+    #spath {
+        fill: white;
+    };
+}
+
+#fpath, #spath {
+    @apply transition-colors duration-300
+}
+
+#fpath {
+    @apply fill-[#1877f2] sm:fill-white;
+}
+
+#spath {
+    @apply fill-white sm:fill-none
+}
 
 
 
