@@ -195,7 +195,7 @@ button {
 };
 
 .mobile-service-card {
-    @apply bg-sticker absolute inset-0 aspect-square rounded-xl border-2 border-cta w-[80%] left-1/2 top-1/2 -translate-x-1/2 transition-transform duration-400;
+    @apply bg-sticker absolute inset-0 aspect-square rounded-xl border-2 border-cta w-[95%] left-1/2 top-1/2 -translate-x-1/2 transition-transform duration-400;
 };
 
 /* PORTFOLIO */

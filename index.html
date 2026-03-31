@@ -13,23 +13,23 @@
   <script defer src="src/js/main.js"></script>
 </head>
 <body class="relative bg-primary min-h-screen">
-  <div id="grad-wrapper">
-    <div id="overlay" class="fixed inset-0 bg-black/50 z-300 hidden pointer-events-none"></div>
-    <header class="px-[8%] origin-top transition-all duration-200 z-300 py-1 fixed h-[11dvh] sm:h-[13dvh] w-full gap-4 flex sm:justify-between justify-center items-center">
-      <button id="ham-menu-btn" class="absolute left-[4%] h-[25%] w-[20%] flex items-center sm:hidden z-500">
+  <button id="ham-menu-btn" class="fixed left-[4%] top-8 h-[25%] w-[20%] flex items-center sm:hidden z-500">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <nav id="ham-menu" class="flex flex-col gap-4 text-text-secondary font-bold text-lg font-[Red_Hat_Text] text-left -translate-x-[100dvw] h-dvh sm:hidden fixed top-0 bottom-0 left-0 w-[45dvw] z-400 bg-sticker-light transition-transform duration-200">
-        <a href="#" class="ham-link pl-[10%] pt-24">Início</a>
-        <a href="#present" class="ham-link pl-[10%]">Quem somos</a>
-        <a href="#services" class="ham-link pl-[10%]">Serviços</a>
-        <a href="" class="ham-link pl-[10%]">Portfolio</a>
-        <a href="" class="ham-link pl-[10%]">Clientes</a>
-        <a href="" class="ham-link pl-[10%]">Depoimentos</a>
-        <a href="" class="ham-link pl-[10%]">Contate-nos</a>
-      </nav>
+  <nav id="ham-menu" class="flex flex-col gap-4 text-text-secondary font-bold text-lg font-[Red_Hat_Text] text-left -translate-x-[100dvw] sm:hidden fixed inset-0 w-[45dvw] z-400 bg-sticker-light transition-transform duration-200">
+    <a href="#" class="ham-link pl-[10%] pt-24">Início</a>
+    <a href="#present" class="ham-link pl-[10%]">Quem somos</a>
+    <a href="#services" class="ham-link pl-[10%]">Serviços</a>
+    <a href="" class="ham-link pl-[10%]">Portfolio</a>
+    <a href="" class="ham-link pl-[10%]">Clientes</a>
+    <a href="" class="ham-link pl-[10%]">Depoimentos</a>
+    <a href="" class="ham-link pl-[10%]">Contate-nos</a>
+  </nav>
+  <div id="grad-wrapper">
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-300 hidden pointer-events-none"></div>
+    <header class="px-[8%] origin-top transition-all duration-200 z-300 py-1 fixed h-[11dvh] sm:h-[13dvh] w-full gap-4 flex sm:justify-between justify-center items-center">
       <a href="#" class="sm:h-[80%] h-[80%]"><img id="header-logo" class="h-full" src="/bendito-logo.png" alt=""></a>
       <nav id="navbar" class="text-text-secondary text-nowrap hidden sm:flex font-[Red_Hat_Text] tracking-tight font-semibold text-sm md:text-base gap-4 lg:gap-8 lg:text-lg">
         <a class="relative ham-link transition-all duration-200 hover:scale-105" href="#present">Quem somos</a>
@@ -158,9 +158,9 @@
       </div>
 
       <div id="mobile-services-wrapper" class="flex md:hidden w-full relative h-[40dvh] items-center justify-center text-text-primary">
-        <div id="arrow-pos" class="absolute aspect-square w-[95%] left-1/2 -translate-x-1/2 font-[Red_Hat_Text] font-bold">
-          <div id="arrow-left" class="absolute h-7 aspect-square hover:cursor-pointer -left-6 top-1/2 -translate-y-1/2 flex items-center justify-center bg-sticker-lighter rounded-full opacity-0 transition-opacity duration-200">&lt;</div>
-          <div id="arrow-right" class="absolute h-7 aspect-square hover:cursor-pointer -right-6 top-1/2 -translate-y-1/2 flex items-center justify-center bg-sticker-lighter rounded-full">&gt;</div>
+        <div id="arrow-pos" class="absolute aspect-square w-full left-1/2 -translate-x-1/2 font-[Red_Hat_Text] font-bold">
+          <div id="arrow-left" class="absolute h-6 aspect-square hover:cursor-pointer -left-5.5 top-1/2 -translate-y-1/2 flex items-center justify-center bg-sticker-lighter rounded-full opacity-0 transition-opacity duration-200">&lt;</div>
+          <div id="arrow-right" class="absolute h-6 aspect-square hover:cursor-pointer -right-5.5 top-1/2 -translate-y-1/2 flex items-center justify-center bg-sticker-lighter rounded-full">&gt;</div>
         </div>
         <div class="mobile-service-card z-6 -translate-y-1/2">1 z6</div>
         <div class="mobile-service-card z-5 -translate-y-[48%] opacity-90">2 z5</div>

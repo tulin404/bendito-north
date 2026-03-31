@@ -42,9 +42,9 @@ if (innerWidth > 640) {
 
 window.addEventListener('scroll', () => {
     if (scrollY > 0) {
-        header.classList.add('scale-y-85');
+        header.classList.add('scale-y-90');
     } else {
-        header.classList.remove('scale-y-85')
+        header.classList.remove('scale-y-90')
     }
 });
 
