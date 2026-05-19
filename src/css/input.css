@@ -261,11 +261,15 @@ button {
 
 .social-icon {
     color: var(--color-text-primary);
-    @apply transition-all duration-300 w-full h-full 
+    @apply transition-all duration-300 w-full h-full;
 }
 
 .social #whatsapp {
     @apply text-cta sm:text-white
+};
+
+.social #ttk {
+    @apply h-10
 };
 
 .social:hover #whatsapp {
