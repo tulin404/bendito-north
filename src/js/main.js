@@ -222,4 +222,60 @@ window.addEventListener('load', () => {
     };
 });
 
-// VIDEOS PRELOAD
+const inputs = document.querySelectorAll("#contact-form input");
+
+inputs.forEach(input => input.addEventListener("input", (e) => {
+    if (e.target.value.trim() !== "") {
+        e.target.classList.remove("input-error");
+    } else {
+        e.target.classList.add("input-error");
+    };
+}));
+
+const form = document.querySelector("#contact-form");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const fields = [
+      { id: "nome" },
+      { id: "email" },
+      { id: "cidade" },
+      { id: "empresa" }
+    ];
+
+    let hasError = false;
+
+    fields.forEach(({ id }) => {
+      const input = document.getElementById(id);
+
+        if (!input.value.trim()) {
+            hasError = true;
+            input.classList.add("input-error");
+        } else {
+            input.classList.add("border-gray-300");
+        };
+    });
+
+    if (hasError) return;
+
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const cidade = document.getElementById("cidade").value;
+    const empresa = document.getElementById("empresa").value;
+
+    const mensagem = `Olá! Vim pelo site e tenho interesse em marketing digital para crescimento da minha empresa.
+
+    Nome: ${nome}
+    Email: ${email}
+    Cidade: ${cidade}
+    Empresa: ${empresa}
+
+    Fico no aguardo para conversarmos melhor.`;
+
+    const numero = "5511999999999";
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(url, "_blank");
+});
