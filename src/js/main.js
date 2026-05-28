@@ -7,47 +7,39 @@ const app = document.querySelector("#app");
 
 // HAM MENU
 
-hamMenuBtn.addEventListener('click', () => {
-    
-    hamMenuBtn.classList.toggle('active');
-    hamMenu.classList.toggle('-translate-x-[100dvw]');
-    overlay.classList.toggle('hidden');
-    benditoImg.classList.toggle('opacity-50');
-    document.documentElement.classList.toggle('overflow-hidden');
-    
-    const isOpen = hamMenuBtn.classList.contains('active');
-    
-    if (isOpen) {
-        app.setAttribute('inert', '');
-    } else {
-        app.removeAttribute('inert');
-    };
+let isMenuOpen = false;
 
-    if (header.classList.contains('scale-y-85')) {
-        header.classList.remove('scale-y-85');
-    };
+function openMenu() {
+    isMenuOpen = true;
+
+    hamMenuBtn.classList.add('active');
+    hamMenu.classList.remove('-translate-x-[100dvw]');
+    overlay.classList.remove('hidden');
+    benditoImg.classList.add('opacity-50');
+    document.documentElement.classList.add('overflow-hidden');
+
+    app.setAttribute('inert', '');
+    header.classList.remove('scale-y-85');
+}
+
+function closeMenu() {
+    isMenuOpen = false;
+
+    hamMenuBtn.classList.remove('active');
+    hamMenu.classList.add('-translate-x-[100dvw]');
+    overlay.classList.add('hidden');
+    benditoImg.classList.remove('opacity-50');
+    document.documentElement.classList.remove('overflow-hidden');
+
+    app.removeAttribute('inert');
+    header.classList.remove('scale-y-85');
+}
+
+hamMenuBtn.addEventListener('click', () => {
+    isMenuOpen ? closeMenu() : openMenu();
 });
 
-if (window.innerWidth <= 640) {
-    window.addEventListener('click', (e) => {
-        if (e.target.classList.contains('ham-link')) {
-            hamMenuBtn.classList.toggle('active');
-            hamMenu.classList.toggle('-translate-x-[100dvw]');
-            overlay.classList.toggle('hidden');
-            benditoImg.classList.toggle('opacity-50');
-            document.documentElement.classList.toggle('overflow-hidden');
-            app.removeAttribute('inert');
-
-            if (header.classList.contains('scale-y-85')) {
-                header.classList.remove('scale-y-85');
-            };
-        };
-    });
-};
-
-if (innerWidth > 640) {
-    hamMenu.inert = true;
-};
+hamMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
 
 // HEADER SCALE
