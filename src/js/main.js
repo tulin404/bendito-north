@@ -3,16 +3,26 @@ const hamMenu = document.getElementById('ham-menu');
 const overlay = document.getElementById('overlay');
 const benditoImg = document.getElementById('header-logo');
 const header = document.querySelector('header');
-
+const app = document.querySelector("#app");
 
 // HAM MENU
 
 hamMenuBtn.addEventListener('click', () => {
+    
     hamMenuBtn.classList.toggle('active');
     hamMenu.classList.toggle('-translate-x-[100dvw]');
     overlay.classList.toggle('hidden');
     benditoImg.classList.toggle('opacity-50');
     document.documentElement.classList.toggle('overflow-hidden');
+    
+    const isOpen = hamMenuBtn.classList.contains('active');
+    
+    if (isOpen) {
+        app.setAttribute('inert', '');
+    } else {
+        app.removeAttribute('inert');
+    };
+
     if (header.classList.contains('scale-y-85')) {
         header.classList.remove('scale-y-85');
     };
@@ -26,6 +36,8 @@ if (window.innerWidth <= 640) {
             overlay.classList.toggle('hidden');
             benditoImg.classList.toggle('opacity-50');
             document.documentElement.classList.toggle('overflow-hidden');
+            app.removeAttribute('inert');
+
             if (header.classList.contains('scale-y-85')) {
                 header.classList.remove('scale-y-85');
             };
