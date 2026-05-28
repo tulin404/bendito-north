@@ -115,7 +115,7 @@ button {
 
 /* HERO */
 
-#cta-hero:hover, .contact:hover {
+#cta-hero:hover, .contact:hover, #send:hover {
     box-shadow: var(--color-cta-darker) 0 0 16px 6px;
 }
 
