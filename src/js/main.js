@@ -56,15 +56,18 @@ const sections = document.querySelectorAll('section');
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        const index = Array.from(sections).indexOf(entry.target);
+        const id = entry.target.dataset.section;
+        if (!id) return;
+
+        const activeLink = document.querySelector(`[data-link="${id}"]`);
+        if (!activeLink) return;
 
         if (entry.isIntersecting) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            navLinks[index].classList.add('active');
-        } else {
-            navLinks[index].classList.remove('active');
+            document.querySelectorAll('[data-link]').forEach(link => link.classList.remove('active'));
+
+            activeLink.classList.add('active');
         }
-    })
+    });
 }, { threshold: 0.4 });
 
 sections.forEach(section => observer.observe(section));
