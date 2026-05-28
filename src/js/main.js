@@ -13,7 +13,7 @@ function openMenu() {
     isMenuOpen = true;
 
     hamMenuBtn.classList.add('active');
-    hamMenu.classList.remove('-translate-x-[100dvw]');
+    hamMenu.classList.remove('-translate-x-full');
     overlay.classList.remove('hidden');
     benditoImg.classList.add('opacity-50');
     document.documentElement.classList.add('overflow-hidden');
@@ -26,7 +26,7 @@ function closeMenu() {
     isMenuOpen = false;
 
     hamMenuBtn.classList.remove('active');
-    hamMenu.classList.add('-translate-x-[100dvw]');
+    hamMenu.classList.add('-translate-x-full');
     overlay.classList.add('hidden');
     benditoImg.classList.remove('opacity-50');
     document.documentElement.classList.remove('overflow-hidden');
