@@ -242,7 +242,7 @@ button {
 
 #form-wrapper input {
     outline: none;
-    @apply py-2 px-4 mt-0.5 rounded-md text-text-secondary text-lg;
+    @apply mt-0.5 rounded-md text-text-secondary text-lg;
 };
 
 .input-error {
