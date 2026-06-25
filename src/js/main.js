@@ -79,20 +79,20 @@ sections.forEach(section => observer.observe(section));
 
 // PRESENT SLIDES
 
-const wrapper = document.querySelector("#icons-wrapper");
-const track = document.querySelector("#track");
-const slides = document.querySelectorAll(".vision");
+const presentWrapper = document.querySelector("#icons-wrapper");
+const presentTrack = document.querySelector("#track");
+const presentSlides = document.querySelectorAll(".vision");
 
-let presentIindex = 0;
+let presentIndex = 0;
 
-function moveToSlide() {
-    if (presentIindex === 0) {
-        track.style.transform = 'translateX(0)'
+function presentMoveToSlide() {
+    if (presentIndex === 0) {
+        presentTrack.style.transform = 'translateX(0)'
     } else {
-        const slide = slides[presentIindex];
+        const slide = presentSlides[presentIndex];
     
         const slideCenter = slide.offsetLeft + slide.clientWidth / 2;
-        const wrapperCenter = wrapper.clientWidth / 2;
+        const wrapperCenter = presentWrapper.clientWidth / 2;
     
         const offset = slideCenter - wrapperCenter;
     
@@ -101,11 +101,11 @@ function moveToSlide() {
 };
 
 setInterval(() => {
-    presentIindex++;
-    if (presentIindex >= slides.length) {
-        presentIindex = 0;
+    presentIndex++;
+    if (presentIndex >= presentSlides.length) {
+        presentIndex = 0;
     };
-    moveToSlide();
+    presentMoveToSlide();
 }, 5000);
 
 
@@ -134,6 +134,10 @@ function getAllOpacities(element) {
 leftArrow.inert = true;
 
 rightArrow.addEventListener('click', () => {
+    if (servicesIndex >= mobileCards.length -1) {
+        rightArrow.inert = true;
+        return;
+    };
     ++servicesIndex;
     leftArrow.classList.remove('opacity-0');
     leftArrow.inert = true;
@@ -155,6 +159,10 @@ rightArrow.addEventListener('click', () => {
 });
 
 leftArrow.addEventListener('click', () => {
+    if (servicesIndex <= 0) {
+        leftArrow.inert = true;
+        return;
+    };
     --servicesIndex;
     rightArrow.inert = true;
     leftArrow.inert = true;
@@ -175,6 +183,37 @@ leftArrow.addEventListener('click', () => {
         card.classList.remove(...transforms.slice(transforms.length - 1,), ...opacities.slice(opacities.length - 1));
     });
 });
+
+// TESTIMONIALS
+
+const testimonialWrapper = document.querySelector("#icons-wrapper");
+const testimonialTrack = document.querySelector("#track");
+const testimonialSlides = document.querySelectorAll(".vision");
+
+let testimonialIndex = 0;
+
+function testimonialMoveToSlide() {
+    if (testimonialIndex === 0) {
+        track.style.transform = 'translateX(0)'
+    } else {
+        const slide = testimonialSlides[testimonialIndex];
+    
+        const slideCenter = slide.offsetLeft + slide.clientWidth / 2;
+        const wrapperCenter = testimonialWrapper.clientWidth / 2;
+    
+        const offset = slideCenter - wrapperCenter;
+    
+        track.style.transform = `translateX(-${offset}px)`;
+    };
+};
+
+setInterval(() => {
+    testimonialIndex++;
+    if (testimonialIndex >= slides.length) {
+        testimonialIndex = 0;
+    };
+    testimonialMoveToSlide();
+}, 5000);
 
 // PORTFOLIO
 

@@ -22,6 +22,7 @@
     <a href="#" class="ham-link pl-[10%] pt-24">Início</a>
     <a href="#present" class="ham-link pl-[10%]">Quem somos</a>
     <a href="#services" class="ham-link pl-[10%]">Serviços</a>
+    <a href="#testimonials" class="ham-link pl-[10%]">Clientes</a>
     <a href="#portfolio" class="ham-link pl-[10%]">Portfolio</a>
     <a href="#contact" class="ham-link pl-[10%]">Contate-nos</a>
   </nav>
@@ -33,6 +34,7 @@
         <nav id="navbar" class="text-text-secondary text-nowrap hidden sm:flex font-[Red_Hat_Text] tracking-tight font-semibold text-sm md:text-base gap-4 lg:gap-8 lg:text-lg justify-center items-center">
           <a data-link="present" class="relative md:text-xl ham-link transition-all duration-200 hover:scale-105" href="#present">Quem somos</a>
           <a data-link="services" class="relative md:text-xl ham-link transition-all duration-200 hover:scale-105" href="#services">Serviços</a>
+          <a data-link="testimonials" class="relative md:text-xl ham-link transition-all duration-200 hover:scale-105" href="#testimonials">Clientes</a>
           <a data-link="portfolio" class="relative md:text-xl ham-link transition-all duration-200 hover:scale-105" href="#portfolio">Portfolio</a>
           <a data-link="contact" class="relative md:text-xl ham-link contact transition-all duration-200 hover:scale-110 bg-cta px-6 py-3 rounded-full" href="#contact">Contate-nos</a>
         </nav>
@@ -229,6 +231,15 @@
         </div>
       </section>
       <div id="grad-wrapper-2">
+        <section data-section="testimonials" id="testimonials" class="min-h-dvh py-6 mb-20">
+            <div class="vision w-64 sm:w-sm xl:h-72 flex flex-col justify-center items-center border-2 border-cta md:border-sticker-light md:hover:border-cta rounded-xl bg-sticker gap-4 transition-all duration-200 px-6 py-3">
+              <img src="/arrow-in-the-target.svg" class="h-20" alt="">
+              <div class="text-wrapper">
+                <h3 class="text-text-primary font-[coolvetica] text-xl sm:text-2xl">VISÃO ESTRATÉGICA</h3>
+                <p class="text-text-secondary font-[Red_Hat_Text]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum delectus tempore magni doloremque beatae quis modi quasi voluptatem sed ea nihil maxime odio i.</p>
+              </div>
+            </div>
+        </section>
         <section data-section="portfolio" id="portfolio" class="min-h-dvh py-6 mb-20">
           <div id="carousel-wrapper" class="flex overflow-x-hidden flex-col gap-8 md:gap-12 lg:gap-16">
             <div id="carousel-top" class="relative flex gap-16 min-w-max py-6">
@@ -286,19 +297,19 @@
             <div id="form-wrapper" class="mt-6 max-w-2xl w-full">
               <form id="contact-form" class="flex flex-col gap-10">
                 <div class="flex flex-col gap-1 relative">
-                  <input type="text" id="nome" name="nome" placeholder=" " class="peer form-input border-2 border-text-primary rounded-lg py-1 md:py-2 focus:outline-none transition"/>
+                  <input type="text" id="nome" name="nome" placeholder=" " class="peer form-input border-2 border-text-primary rounded-lg py-1 md:py-2 px-2 focus:outline-none transition"/>
                   <label for="nome" class="md:text-xl translate-y-0 absolute -left-1 -top-7 text-text-secondary transition-all duration-200 px-1 peer-placeholder-shown:left-2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:-top-7 peer-focus:-left-1 peer-focus:translate-y-0">Nome</label>
                 </div>
                 <div class="flex flex-col gap-1 relative">
-                  <input type="email" id="email" name="email" placeholder=" " class="peer form-input border-2 border-text-primary rounded-lg py-1 md:py-2 focus:outline-none transition"/>
+                  <input type="email" id="email" name="email" placeholder=" " class="peer form-input border-2 border-text-primary rounded-lg py-1 md:py-2 px-2 focus:outline-none transition"/>
                   <label for="email" class="md:text-xl translate-y-0 absolute -left-1 -top-7 text-text-secondary transition-all duration-200 px-1 peer-placeholder-shown:left-2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:-top-7 peer-focus:-left-1 peer-focus:translate-y-0">Email</label>
                 </div>
                 <div class="flex flex-col gap-1 relative">
-                  <input type="text" id="cidade" name="cidade" placeholder=" " class="peer form-input border-2 border-text-primary rounded-lg py-1 md:py-2 focus:outline-none transition"/>
+                  <input type="text" id="cidade" name="cidade" placeholder=" " class="peer form-input border-2 border-text-primary rounded-lg py-1 md:py-2 px-2 focus:outline-none transition"/>
                   <label for="cidade" class="md:text-xl translate-y-0 absolute -left-1 -top-7 text-text-secondary transition-all duration-200 px-1 peer-placeholder-shown:left-2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:-top-7 peer-focus:-left-1 peer-focus:translate-y-0">Cidade</label>
                 </div>
                 <div class="flex flex-col gap-1 relative">
-                  <input type="text" id="empresa" name="empresa" placeholder=" " class="peer form-input border-2 border-text-primary rounded-lg py-1 md:py-2 focus:outline-none transition"/>
+                  <input type="text" id="empresa" name="empresa" placeholder=" " class="peer form-input border-2 border-text-primary rounded-lg py-1 md:py-2 px-2 focus:outline-none transition"/>
                   <label for="empresa" class="md:text-xl translate-y-0 absolute -left-1 -top-7 text-text-secondary transition-all duration-200 px-1 peer-placeholder-shown:left-2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:-top-7 peer-focus:-left-1 peer-focus:translate-y-0">Nome da Empresa</label>
                 </div>
                 <button id="send" type="submit" class="self-center font-[coolvetica] w-[75%] mt-2 bg-black text-white py-2 sm:py-3 rounded-lg font-medium hover:opacity-90 transition-all duration-200 text-2xl md:text-3xl hover:-translate-y-2 active:scale-95 hover:bg-cta active:bg-cta-dark">
