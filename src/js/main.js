@@ -186,34 +186,53 @@ leftArrow.addEventListener('click', () => {
 
 // TESTIMONIALS
 
-const testimonialWrapper = document.querySelector("#icons-wrapper");
-const testimonialTrack = document.querySelector("#track");
-const testimonialSlides = document.querySelectorAll(".vision");
+const testimonialTrack = document.querySelector("#testimonials-track");
+let interval;
+const gap = 24;
 
-let testimonialIndex = 0;
+function highlightCenterCard() {
+    const cards = testimonialTrack.children;
 
-function testimonialMoveToSlide() {
-    if (testimonialIndex === 0) {
-        track.style.transform = 'translateX(0)'
-    } else {
-        const slide = testimonialSlides[testimonialIndex];
-    
-        const slideCenter = slide.offsetLeft + slide.clientWidth / 2;
-        const wrapperCenter = testimonialWrapper.clientWidth / 2;
-    
-        const offset = slideCenter - wrapperCenter;
-    
-        track.style.transform = `translateX(-${offset}px)`;
+    for (const card of cards) {
+        card.classList.remove("-translate-y-4");
     };
+
+    const middleIndex = Math.floor(cards.length / 2);
+    cards[middleIndex].classList.add("-translate-y-4");
 };
 
-setInterval(() => {
-    testimonialIndex++;
-    if (testimonialIndex >= slides.length) {
-        testimonialIndex = 0;
-    };
-    testimonialMoveToSlide();
-}, 5000);
+function nextSlide() {
+    const firstCard = testimonialTrack.children[0];
+    const cardWidth = firstCard.offsetWidth;
+
+    testimonialTrack.style.transition = "transform 0.6s ease";
+    testimonialTrack.style.transform = `translateX(-${cardWidth + gap}px)`;
+
+    setTimeout(() => {
+        testimonialTrack.style.transition = "none";
+        testimonialTrack.appendChild(firstCard);
+        testimonialTrack.style.transform = "translateX(0)";
+
+        highlightCenterCard();
+    }, 600);
+};
+
+function startCarousel() {
+    clearInterval(interval);
+    interval = setInterval(nextSlide, 4000);
+};
+
+function stopCarousel() {
+    clearInterval(interval);
+};
+
+for (const testimonial of testimonialTrack.children) {
+    testimonial.addEventListener("mouseenter", stopCarousel);
+    testimonial.addEventListener("mouseleave", startCarousel);
+};
+
+highlightCenterCard();
+startCarousel();
 
 // PORTFOLIO
 
