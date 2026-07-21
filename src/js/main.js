@@ -185,52 +185,135 @@ leftArrow.addEventListener('click', () => {
 });
 
 // TESTIMONIALS
-
+const testimonialsWrapper = document.querySelector("#testimonials-wrapper");
 const testimonialTrack = document.querySelector("#testimonials-track");
+const spacerStart = document.querySelector("#spacer-start");
+const spacerEnd = document.querySelector("#spacer-end");
+
 let interval;
 const gap = 24;
 
+function getRealCards() {
+    return [...testimonialTrack.children].filter(
+        (el) => el.id !== "spacer-start" && el.id !== "spacer-end"
+    );
+}
+
+function updateSpacers() {
+    const cards = getRealCards();
+    if (!cards.length) return;
+
+    const cardWidth = cards[0].offsetWidth;
+    const wrapperWidth = testimonialsWrapper.clientWidth;
+    const spacerWidth = Math.max((wrapperWidth - cardWidth) / 2 - gap, 0);
+
+    spacerStart.style.width = `${spacerWidth}px`;
+    spacerEnd.style.width = `${spacerWidth}px`;
+
+    testimonialsWrapper.scrollLeft = 0;
+}
+
 function highlightCenterCard() {
-    const cards = testimonialTrack.children;
+    const wrapperRect = testimonialsWrapper.getBoundingClientRect();
+    const centerX = wrapperRect.left + wrapperRect.width / 2;
+    let closest = null;
+    let closestDist = Infinity;
 
-    for (const card of cards) {
+    for (const card of getRealCards()) {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.left + rect.width / 2;
+        const dist = Math.abs(cardCenter - centerX);
+        if (dist < closestDist) {
+            closestDist = dist;
+            closest = card;
+        }
+    }
+
+    for (const card of getRealCards()) {
         card.classList.remove("-translate-y-4");
-    };
-
-    const middleIndex = Math.floor(cards.length / 2);
-    cards[middleIndex].classList.add("-translate-y-4");
-};
+    }
+    if (closest) closest.classList.add("-translate-y-4");
+}
 
 function nextSlide() {
-    const firstCard = testimonialTrack.children[0];
-    const cardWidth = firstCard.offsetWidth;
+    const cards = getRealCards();
+    const cardWidth = cards[0].offsetWidth + gap;
+    const maxScroll = testimonialsWrapper.scrollWidth - testimonialsWrapper.clientWidth;
+    let target = testimonialsWrapper.scrollLeft + cardWidth;
 
-    testimonialTrack.style.transition = "transform 0.6s ease";
-    testimonialTrack.style.transform = `translateX(-${cardWidth + gap}px)`;
-
-    setTimeout(() => {
-        testimonialTrack.style.transition = "none";
-        testimonialTrack.appendChild(firstCard);
-        testimonialTrack.style.transform = "translateX(0)";
-
-        highlightCenterCard();
-    }, 600);
-};
+    if (target >= maxScroll - 5) {
+        target = 0;
+    }
+    testimonialsWrapper.scrollTo({ left: target, behavior: "smooth" });
+}
 
 function startCarousel() {
     clearInterval(interval);
     interval = setInterval(nextSlide, 4000);
-};
+}
 
 function stopCarousel() {
     clearInterval(interval);
-};
+}
 
-for (const testimonial of testimonialTrack.children) {
-    testimonial.addEventListener("mouseenter", stopCarousel);
-    testimonial.addEventListener("mouseleave", startCarousel);
-};
+testimonialsWrapper.addEventListener("mouseenter", stopCarousel);
+testimonialsWrapper.addEventListener("mouseleave", startCarousel);
+testimonialsWrapper.addEventListener("touchstart", stopCarousel, { passive: true });
+testimonialsWrapper.addEventListener("touchend", () => setTimeout(startCarousel, 1500), { passive: true });
 
+let scrollTimeout;
+testimonialsWrapper.addEventListener("scroll", () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(highlightCenterCard, 100);
+}, { passive: true });
+
+window.addEventListener("resize", updateSpacers);
+
+let isDown = false;
+let startX;
+let scrollLeftStart;
+
+testimonialsWrapper.addEventListener("mousedown", (e) => {
+    isDown = true;
+    testimonialsWrapper.classList.add("cursor-grabbing");
+    startX = e.pageX - testimonialsWrapper.offsetLeft;
+    scrollLeftStart = testimonialsWrapper.scrollLeft;
+    stopCarousel();
+});
+
+testimonialsWrapper.addEventListener("mouseleave", () => {
+    isDown = false;
+    testimonialsWrapper.classList.remove("cursor-grabbing");
+});
+
+testimonialsWrapper.addEventListener("mouseup", () => {
+    isDown = false;
+    testimonialsWrapper.classList.remove("cursor-grabbing");
+    setTimeout(startCarousel, 1500);
+});
+
+testimonialsWrapper.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - testimonialsWrapper.offsetLeft;
+    const walk = (x - startX) * 1.5; // sensibilidade do arrasto
+    testimonialsWrapper.scrollLeft = scrollLeftStart - walk;
+});
+
+testimonialsWrapper.addEventListener("wheel", (e) => {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        testimonialsWrapper.scrollLeft += e.deltaY;
+        stopCarousel();
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            highlightCenterCard();
+            startCarousel();
+        }, 1000);
+    }
+}, { passive: false });
+
+updateSpacers();
 highlightCenterCard();
 startCarousel();
 

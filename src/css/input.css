@@ -127,7 +127,7 @@ button {
 
 /* ICONS WRAPPER */
 
-#icons-wrapper::before, #testimonials-wrapper::before {
+#icons-wrapper::before {
     position: absolute;
     border-bottom-left-radius: 12px;
     content: "";
@@ -144,7 +144,7 @@ button {
     );
 }
 
-#icons-wrapper::after, #testimonials-wrapper::after {
+#icons-wrapper::after {
     position: absolute;
     border-bottom-right-radius: 12px;
     content: "";
@@ -202,7 +202,14 @@ button {
 
 /* TESTIMONIALS */
 
+#testimonials-wrapper,
+#testimonials-track {
+    overflow-anchor: none;
+}
 
+.testimonial * {
+    @apply select-none
+}
 
 /* PORTFOLIO */
 
