@@ -296,7 +296,7 @@ testimonialsWrapper.addEventListener("mousemove", (e) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - testimonialsWrapper.offsetLeft;
-    const walk = (x - startX) * 1.5; // sensibilidade do arrasto
+    const walk = (x - startX) * 1.5;
     testimonialsWrapper.scrollLeft = scrollLeftStart - walk;
 });
 
