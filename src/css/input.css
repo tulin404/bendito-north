@@ -188,63 +188,54 @@ button {
 .card-wrapper {
     perspective: 1000px;
     -webkit-perspective: 1000px;
+    will-change: transform; /* movido pra cá */
     @apply aspect-square transition-transform duration-300 hover:-translate-y-4 relative bg-transparent;
 }
-
 .card-wrapper:hover .card {
     transform: rotateY(180deg);
 }
-
 .card {
     width: 100%;
     height: 100%;
     position: relative;
-
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
+    /* will-change: transform; <- REMOVIDO daqui */
 }
-
 .front-card,
 .back-card {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-
-    /* Previne a piscada/flash durante o giro */
     backface-visibility: hidden !important;
     -webkit-backface-visibility: hidden !important;
-
-    /* Força aceleração gráfica sem misturar camadas */
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
     -webkit-font-smoothing: antialiased;
-
-    @apply border-2 bg-sticker aspect-square rounded-xl;
+    /* REMOVIDO: border-2 (causa do flicker) */
+    @apply bg-sticker aspect-square rounded-xl;
 }
 
 .front-card {
-    @apply border-cta md:border-sticker-light md:hover:border-cta text-3xl flex flex-col items-center justify-center gap-4 font-heading font-bold text-text-primary text-center;
-
-    /* Separação física mínima para não dar conflito (Z-fighting) */
+    @apply md:hover:border-cta text-3xl flex flex-col items-center justify-center gap-4 font-heading font-bold text-text-primary text-center transition-all duration-200;
+    box-shadow: inset 0 0 0 2px var(--color-sticker-light); /* substitui border-cta */
     transform: rotateY(0deg) translateZ(1px);
     -webkit-transform: rotateY(0deg) translateZ(1px);
 }
 
-.back-card {
-    @apply border-cta font-body font-light text-lg text-center px-2 flex items-center justify-center text-text-secondary;
+@media (min-width: 768px) {
+    .card-wrapper:hover .front-card {
+        box-shadow: inset 0 0 0 2px var(--color-cta);
+    }
+}
 
+.back-card {
+    @apply font-body font-light text-lg text-center px-2 flex items-center justify-center text-text-secondary;
+    box-shadow: inset 0 0 0 2px var(--color-cta); /* substitui border-cta */
     transform: rotateY(180deg) translateZ(1px);
     -webkit-transform: rotateY(180deg) translateZ(1px);
 }
 
-/*
-  EFEITO GLOW/SOMBRA SEM FLASH:
-  Criamos uma camada isolada presa ao container rotacional (.card).
-  Ela gira junto com a carta, mas não interfere com o backface-visibility das faces.
-*/
 .card::after {
     content: '';
     position: absolute;
@@ -254,12 +245,8 @@ button {
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
-
-    /* Garante que o glow fique levemente atrás do plano de renderização */
     transform: translateZ(0px);
 }
-
-/* Ativa o glow no hover do wrapper */
 .card-wrapper:hover .card::after {
     opacity: 1;
 }
@@ -339,8 +326,16 @@ button {
     @apply transition-all duration-300 w-full h-full;
 }
 
+.social #whatsapp {
+    @apply text-cta sm:text-white
+}
+
 .social #ttk {
     @apply h-10
+}
+
+.social:hover #whatsapp {
+    color: #25D366;
 }
 
 .std {
