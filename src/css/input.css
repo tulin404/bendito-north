@@ -1,21 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #0B0F0E;
-    --color-sticker: oklch(0.15 0 0);
-    --color-sticker-light: oklch(0.2 0 0);
-    --color-sticker-lighter: oklch(0.35 0 0);
+    /* ===== CORES ===== */
+    /* Fundos: preto puro */
+    --color-primary: oklch(0 0 0);
+
+    /* Cards e gradientes: #202020 e variações mais claras para hover/bordas */
+    --color-sticker: oklch(0.2435 0 0);          /* #202020 - base dos cards */
+    --color-sticker-light: oklch(0.32 0 0);      /* borda/hover sutil */
+    --color-sticker-lighter: oklch(0.45 0 0);    /* elementos de destaque sobre o card */
     --color-border-sticker-lighter: oklch(0.55 0 0);
-    --color-secondary: oklch(0.2432 0.0067 178.64);
-    --color-text-primary: oklch(1 0 0);
-    --color-text-secondary: oklch(0.9 0 0);
-    --color-cta: oklch(0.7096 0.2738 147.7);
-    --color-cta-dark: oklch(0.6096 0.2738 147.7);
-    --color-cta-darker: oklch(0.5096 0.2738 147.7);
+
+    /* Mantido por compatibilidade, alinhado ao tom dos cards */
+    --color-secondary: oklch(0.2435 0 0);
+
+    /* Textos: branco puro para títulos/texto primário, cinza claro para texto secundário */
+    --color-text-primary: oklch(1 0 0);          /* #ffffff */
+    --color-text-secondary: oklch(0.75 0 0);     /* cinza claro para hierarquia */
+    --color-text-muted: oklch(0.55 0 0);         /* legendas, detalhes discretos */
+
+    /* CTA: branco puro para botões, bordas e destaques — máximo contraste sobre o preto */
+    --color-cta: oklch(1 0 0);
+    --color-cta-dark: oklch(0.88 0 0);      /* hover dos elementos brancos */
+    --color-cta-darker: oklch(0.75 0 0);    /* estado ativo/pressed */
+    /* Derivada grafite: usada apenas em gradientes ambiente, sombras/glows e em texto de destaque dentro de títulos brancos */
+    --color-cta-glow: oklch(0.5 0 0);
+
+    /* ===== TIPOGRAFIA ===== */
+    --font-heading: 'PP Neue Montreal', sans-serif;
+    --font-body: 'PP Neue Montreal', sans-serif;
 }
 
 html {
     scroll-padding-top: 128px;
+}
+
+body {
+    font-family: var(--font-body);
 }
 
 #contact {
@@ -33,17 +54,17 @@ button {
 /* SINGLE ITEMS */
 
 #grad-wrapper {
-    background: #0B0F0E;
-    background: linear-gradient(130deg, rgba(11, 15, 14, 1) 25%, rgba(0, 1, 0, 1) 45%, rgba(107, 255, 137, 1) 75%, rgba(0, 1, 0, 1) 90%);
+    background: var(--color-primary);
+    background: linear-gradient(130deg, oklch(0 0 0) 25%, oklch(0 0 0) 45%, var(--color-cta-glow) 78%, oklch(0 0 0) 92%);
 }
 
 #grad-wrapper-2 {
-    background: #6BFF89;
-    background: radial-gradient(circle, rgba(107, 255, 137, 1) 0%, rgba(11, 15, 14, 1) 60%);
+    background: var(--color-cta-glow);
+    background: radial-gradient(circle, var(--color-cta-glow) 0%, oklch(0 0 0) 60%);
 }
 
 .sticker {
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 24px 8px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 24px 8px;
 }
 
 .vision {
@@ -52,8 +73,8 @@ button {
 
 @media (width > 768px) {
     .vision:hover, .testimonial:hover {
-        box-shadow: var(--color-cta-darker) 0px 0px 24px 4px;
-    }; 
+        box-shadow: var(--color-cta-glow) 0px 0px 24px 4px;
+    };
 }
 
 /* HAM MENU */
@@ -71,7 +92,7 @@ button {
 }
 
 #ham-menu-btn span {
-    @apply transition-all bg-white absolute duration-300 rounded-full left-0 h-0.75 w-full
+    @apply transition-all bg-text-primary absolute duration-300 rounded-full left-0 h-0.75 w-full
 }
 
 #ham-menu-btn span:nth-child(1) {
@@ -116,13 +137,13 @@ button {
 /* HERO */
 
 #cta-hero:hover, .contact:hover, #send:hover {
-    box-shadow: var(--color-cta-darker) 0 0 16px 6px;
+    box-shadow: var(--color-cta-glow) 0 0 16px 6px;
 }
 
 /* PRESENT */
 
 #present {
-    @apply px-[4%] md:px-[8%]
+    @apply px-6 sm:px-8 lg:px-[8%]
 }
 
 /* ICONS WRAPPER */
@@ -137,10 +158,10 @@ button {
     width: 7dvw;
     background: linear-gradient(
         to right,
-        rgba(11, 11, 11, 1),
-        rgba(11, 11, 11, 0.7),
-        rgba(11, 11, 11, 0.4),
-        rgba(11, 11, 11, 0.05)
+        oklch(0 0 0),
+        oklch(0 0 0 / 0.7),
+        oklch(0 0 0 / 0.4),
+        oklch(0 0 0 / 0.05)
     );
 }
 
@@ -154,10 +175,10 @@ button {
     width: 7dvw;
     background: linear-gradient(
         to left,
-        rgba(11, 11, 11, 1),
-        rgba(11, 11, 11, 0.7),
-        rgba(11, 11, 11, 0.4),
-        rgba(11, 11, 11, 0.05)
+        oklch(0 0 0),
+        oklch(0 0 0 / 0.7),
+        oklch(0 0 0 / 0.4),
+        oklch(0 0 0 / 0.05)
     )
 }
 
@@ -165,39 +186,82 @@ button {
 /* SERVICES */
 
 .card-wrapper {
-    @apply aspect-square transition-transform hover:-translate-y-4 perspective-midrange;
-    &:hover .card {
-        @apply rotate-y-180;
-    }
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+    @apply aspect-square transition-transform duration-300 hover:-translate-y-4 relative bg-transparent;
+}
+
+.card-wrapper:hover .card {
+    transform: rotateY(180deg);
 }
 
 .card {
-    @apply transform-3d transition-transform duration-400;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
 }
 
-.front-card, .back-card {
-    @apply aspect-square border-2 backface-hidden bg-sticker border-cta md:border-sticker-light md:hover:border-cta rounded-xl transition-shadow duration-200;
+.front-card,
+.back-card {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Previne a piscada/flash durante o giro */
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+
+    /* Força aceleração gráfica sem misturar camadas */
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -webkit-font-smoothing: antialiased;
+
+    @apply border-2 bg-sticker aspect-square rounded-xl;
 }
 
 .front-card {
-    @apply text-3xl flex flex-col items-center justify-center gap-4 font-[coolvetica]
+    @apply border-cta md:border-sticker-light md:hover:border-cta text-3xl flex flex-col items-center justify-center gap-4 font-heading font-bold text-text-primary text-center;
+
+    /* Separação física mínima para não dar conflito (Z-fighting) */
+    transform: rotateY(0deg) translateZ(1px);
+    -webkit-transform: rotateY(0deg) translateZ(1px);
 }
 
 .back-card {
-    box-shadow: var(--color-cta-darker) 0px 0px 24px 4px;
-    @apply font-[Red_Hat_Text] font-medium text-lg text-center px-2
+    @apply border-cta font-body font-light text-lg text-center px-2 flex items-center justify-center text-text-secondary;
+
+    transform: rotateY(180deg) translateZ(1px);
+    -webkit-transform: rotateY(180deg) translateZ(1px);
 }
 
-.front-card:hover {
-    box-shadow: var(--color-cta-darker) 0px 0px 24px 4px;
+/*
+  EFEITO GLOW/SOMBRA SEM FLASH:
+  Criamos uma camada isolada presa ao container rotacional (.card).
+  Ela gira junto com a carta, mas não interfere com o backface-visibility das faces.
+*/
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: var(--color-cta-glow) 0px 0px 24px 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+
+    /* Garante que o glow fique levemente atrás do plano de renderização */
+    transform: translateZ(0px);
 }
 
-.back-card {
-    @apply md:border-cta;
-}
-
-.mobile-service-card {
-    @apply bg-sticker absolute inset-0 aspect-square rounded-xl border-2 border-cta w-[95%] left-1/2 top-1/2 -translate-x-1/2 transition-transform duration-400;
+/* Ativa o glow no hover do wrapper */
+.card-wrapper:hover .card::after {
+    opacity: 1;
 }
 
 /* TESTIMONIALS */
@@ -214,7 +278,7 @@ button {
 /* PORTFOLIO */
 
 #portfolio {
-    padding: 0 !important
+    padding-inline: 0 !important;
 }
 
 .paused {
@@ -275,16 +339,8 @@ button {
     @apply transition-all duration-300 w-full h-full;
 }
 
-.social #whatsapp {
-    @apply text-cta sm:text-white
-}
-
 .social #ttk {
     @apply h-10
-}
-
-.social:hover #whatsapp {
-    color: var(--color-cta);
 }
 
 .std {

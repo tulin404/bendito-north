@@ -90,12 +90,12 @@ function presentMoveToSlide() {
         presentTrack.style.transform = 'translateX(0)'
     } else {
         const slide = presentSlides[presentIndex];
-    
+
         const slideCenter = slide.offsetLeft + slide.clientWidth / 2;
         const wrapperCenter = presentWrapper.clientWidth / 2;
-    
+
         const offset = slideCenter - wrapperCenter;
-    
+
         track.style.transform = `translateX(-${offset}px)`;
     };
 };
