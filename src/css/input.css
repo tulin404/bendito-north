@@ -272,14 +272,11 @@ button {
     animation-play-state: paused !important;
 }
 
-#carousel-top {
-    animation: carousel-right 15s linear infinite;
-    @media (width > 1024px) {
-        animation: carousel-right 20s linear infinite;
-    }
-}
-
 #carousel-bottom {
+    width: max-content;
+    flex-shrink: 0;
+    touch-action: pan-y;
+    will-change: transform;
     animation: carousel-right 15s linear infinite reverse;
     @media (width > 1024px) {
         animation: carousel-right 20s linear infinite reverse;
@@ -287,17 +284,20 @@ button {
 }
 
 .overlay-carousel {
+    pointer-events: none;
     background: rgba(0, 0, 0, 0);
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0) 95%);
     @apply absolute inset-0 top-0 bottom-0;
 }
 
 .carousel-vid {
-    @apply relative transition-transform duration-200 rounded-2xl w-44 sm:w-52 md:w-58 lg:w-62 z-5;
+    @apply relative block shrink-0 transition-transform duration-200 rounded-2xl w-44 sm:w-52 md:w-58 lg:w-62 z-5;
 }
 
-.carousel-vid:hover {
-    @apply scale-105;
+@media (hover: hover) {
+    .carousel-vid:hover {
+        @apply scale-105;
+    }
 }
 
 /* FORM */
@@ -379,9 +379,9 @@ button {
 
 @keyframes carousel-right {
     from {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     } to {
-        transform: translateX(-50%);
+        transform: translate3d(-50%, 0, 0);
     }
 }
 
