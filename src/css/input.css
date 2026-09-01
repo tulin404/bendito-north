@@ -1,32 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-    /* ===== CORES ===== */
-    /* Fundos: preto puro */
     --color-primary: oklch(0 0 0);
 
-    /* Cards e gradientes: #202020 e variações mais claras para hover/bordas */
-    --color-sticker: oklch(0.2435 0 0);          /* #202020 - base dos cards */
-    --color-sticker-light: oklch(0.32 0 0);      /* borda/hover sutil */
-    --color-sticker-lighter: oklch(0.45 0 0);    /* elementos de destaque sobre o card */
+    --color-sticker: oklch(0.2435 0 0);
+    --color-sticker-light: oklch(0.32 0 0);
+    --color-sticker-lighter: oklch(0.45 0 0);
     --color-border-sticker-lighter: oklch(0.55 0 0);
 
-    /* Mantido por compatibilidade, alinhado ao tom dos cards */
     --color-secondary: oklch(0.2435 0 0);
 
-    /* Textos: branco puro para títulos/texto primário, cinza claro para texto secundário */
-    --color-text-primary: oklch(1 0 0);          /* #ffffff */
-    --color-text-secondary: oklch(0.75 0 0);     /* cinza claro para hierarquia */
-    --color-text-muted: oklch(0.55 0 0);         /* legendas, detalhes discretos */
+    --color-text-primary: oklch(1 0 0);
+    --color-text-secondary: oklch(0.75 0 0);
+    --color-text-muted: oklch(0.55 0 0);
 
-    /* CTA: branco puro para botões, bordas e destaques — máximo contraste sobre o preto */
     --color-cta: oklch(1 0 0);
-    --color-cta-dark: oklch(0.88 0 0);      /* hover dos elementos brancos */
-    --color-cta-darker: oklch(0.75 0 0);    /* estado ativo/pressed */
-    /* Derivada grafite: usada apenas em gradientes ambiente, sombras/glows e em texto de destaque dentro de títulos brancos */
+    --color-cta-dark: oklch(0.88 0 0);
+    --color-cta-darker: oklch(0.75 0 0);
     --color-cta-glow: oklch(0.5 0 0);
 
-    /* ===== TIPOGRAFIA ===== */
     --font-heading: 'PP Neue Montreal', sans-serif;
     --font-body: 'PP Neue Montreal', sans-serif;
 }
