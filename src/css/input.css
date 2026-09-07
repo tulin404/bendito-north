@@ -126,6 +126,10 @@ button {
     @apply scale-x-100
 }
 
+#navbar a:not(.contact).active {
+    @apply text-text-primary
+}
+
 /* HERO */
 
 #cta-hero:hover, .contact:hover, #send:hover {
