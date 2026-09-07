@@ -314,6 +314,48 @@ button {
     }
 }
 
+/* CLIENTS */
+
+/* CLIENTS */
+
+#clients-track-wrapper {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.clients-row {
+    flex-shrink: 0;
+    will-change: transform;
+    animation: carousel-right-quarter 30s linear infinite;
+}
+
+.clients-row-reverse {
+    animation: carousel-right-quarter 30s linear infinite reverse;
+}
+
+#clients-track-wrapper:hover .clients-row {
+    animation-play-state: paused;
+}
+
+.client-logo-placeholder {
+    letter-spacing: 0.05em;
+}
+
+@media (width > 768px) {
+    .client-card:hover {
+        @apply border-cta;
+        box-shadow: var(--color-cta-glow) 0px 0px 24px 4px;
+    }
+}
+
+@keyframes carousel-right-quarter {
+    from {
+        transform: translate3d(0, 0, 0);
+    } to {
+        transform: translate3d(-25%, 0, 0);
+    }
+}
+
 /* FORM */
 
 #form-wrapper input {
