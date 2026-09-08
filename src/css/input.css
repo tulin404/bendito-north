@@ -136,6 +136,24 @@ button {
     box-shadow: var(--color-cta-glow) 0 0 16px 6px;
 }
 
+
+.text-cta-glow {
+    background-image: linear-gradient(
+        100deg,
+        oklch(0.55 0 0) 30%,
+        oklch(1 0 0) 50%,
+        oklch(0.55 0 0) 70%
+    );
+    background-size: 200% 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 32px oklch(1 0 0 / 0.25);
+    animation: cta-shimmer 3s linear infinite;
+}
+
 /* PRESENT */
 
 #present {
@@ -378,6 +396,14 @@ button {
         transform: translate3d(0, 0, 0);
     } to {
         transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@keyframes cta-shimmer {
+    from {
+        background-position: 0% 0;
+    } to {
+        background-position: -200% 0;
     }
 }
 
