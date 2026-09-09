@@ -361,7 +361,7 @@ function playVideo(video) {
     pauseCarousel();
     resetOtherVideos(video);
     video.classList.add('scale-110');
-    video.load(); // garante que o buffer comece, já que preload="none"
+    video.load();
     const playPromise = video.play();
     if (playPromise !== undefined) {
         playPromise.catch(() => {
