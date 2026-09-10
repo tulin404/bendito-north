@@ -286,6 +286,28 @@ button {
     animation-play-state: paused !important;
 }
 
+#carousel-wrapper {
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0, 0, 0, 0.3) 4%,
+        black 14%,
+        black 86%,
+        rgba(0, 0, 0, 0.3) 96%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0, 0, 0, 0.3) 4%,
+        black 14%,
+        black 86%,
+        rgba(0, 0, 0, 0.3) 96%,
+        transparent 100%
+    );
+}
+
 #carousel-bottom {
     width: max-content;
     flex-shrink: 0;
@@ -313,8 +335,6 @@ button {
         @apply scale-105;
     }
 }
-
-/* CLIENTS */
 
 /* CLIENTS */
 

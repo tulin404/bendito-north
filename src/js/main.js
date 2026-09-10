@@ -313,19 +313,6 @@ testimonialsWrapper.addEventListener("mousemove", (e) => {
     testimonialsWrapper.scrollLeft = scrollLeftStart - walk;
 });
 
-testimonialsWrapper.addEventListener("wheel", (e) => {
-    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault();
-        testimonialsWrapper.scrollLeft += e.deltaY;
-        stopCarousel();
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-            highlightCenterCard();
-            startCarousel();
-        }, 1000);
-    }
-}, { passive: false });
-
 updateSpacers();
 highlightCenterCard();
 startCarousel();
